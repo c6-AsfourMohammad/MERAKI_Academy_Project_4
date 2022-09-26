@@ -1,15 +1,16 @@
-jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 const authorization=(string)=>{
-    return (req,res,next)=>{
-        const tokenPayload=req.token;
-        console.log(tokenPayload);
-if(tokenPayload.Permissions.includes(string)){
-    next()
-}else{
-    res.status(403)
-    res.json({success: false,massage: "Unauthorized"})
-}
-    };
+    return (req, res, next) => {
+        // const tokenPayload=req.token;
+        // console.log(tokenPayload);
+        if (!req.token.role.permissions.includes(string)) {
+          return res.status(403).json({
+            success: false,
+            message: `Unauthorized`,
+          });
+        }
+        next();
+      };
 };
 
 module.exports =authorization; 
