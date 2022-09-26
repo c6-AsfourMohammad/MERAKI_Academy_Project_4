@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 // Import Routers
-
+const articlesRouter = require("./routes/article");
 const usersRouter=require("./routes/user");
 const loginRouter = require("./routes/login");
 const rolesRouter=require("./routes/roles");
@@ -19,6 +19,8 @@ const rolesRouter=require("./routes/roles");
 app.use("/users",usersRouter);
 app.use("/roles",rolesRouter);
 app.use("/login", loginRouter);
+app.use("/articles", articlesRouter);
+
 
 
 // Handles any other endpoints [unassigned - endpoints]

@@ -10,7 +10,7 @@ const login = (req, res) => {
   const email = req.body.email.toLowerCase();
   usersModel
     .find({ email: email })
-    .then( (result) => {
+    .then(async (result) => {
       // console.log("result : "+result);
       if (!result) {
         return res.status(404).json({ message: `The email doesn't exist` });
@@ -35,7 +35,7 @@ const login = (req, res) => {
         const options = {
           expiresIn: "24h",
         };
-        const token =  jwt.sign(payload, process.env.SECRET, options);
+        const token = await jwt.sign(payload, process.env.SECRET, options);
         res
           .status(200)
           .json({ message: "Valid login credentials", token: token });
