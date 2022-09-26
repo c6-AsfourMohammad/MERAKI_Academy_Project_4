@@ -23,6 +23,7 @@ newArticle
   });
 });
 };
+//create function updateArticle
 const updateArticle = (req, res)=>{
   const _id = req.params.id;
   articlesModel
@@ -40,6 +41,34 @@ const updateArticle = (req, res)=>{
 
 
 
+//create function  deleteArticle
+const deleteArticle = (req, res) => {
+  const _id = req.params.id;
+  articlesModel
+    .findByIdAndDelete(_id)
+    .then((result) => {
+      if (!result) {
+        return res.status(404).json({
+          success: false,
+          message: `The Article: ${_id} is not found`,
+        });
+      }
+      res.status(200).json({
+        success: true,
+        message: `Article deleted`,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server Error`,
+        err: err.message,
+      });
+    });
+
+};
 
 
-module.exports={createNewArticle,updateArticle};
+
+
+module.exports={createNewArticle,updateArticle,deleteArticle};
