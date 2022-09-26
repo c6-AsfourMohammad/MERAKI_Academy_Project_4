@@ -78,4 +78,17 @@ user.save().then((result)=>{
 //   res.status(500).json({ message:" Server Error",err: err.message });
 // });
 // };
-module.exports={register};
+const updateUser = (req, res)=>{
+    const _id = req.params.id;
+    usersModel.findByIdAndUpdate(_id, req.body, { new: true })
+      .then((result) => {
+        if (!result) {
+          return res.status(404).json({ success: false,message: ` ${_id} not found`});
+        }
+        res.status(202).json({success: true,message: 'user updated',user: result,});
+      })
+      .catch((err) => {
+        res.status(500).json({success: false,message: 'Server Error', err: err.message,});
+      });
+  };
+module.exports={register,updateUser};
