@@ -57,13 +57,13 @@ const deleteArticle = (req, res) => {
     });
 
 };
-
+//create function getAllArticles
 const getAllArticles = (req, res) => {
-  const userId = req.token.userId;
-  articlesModel.find({}).populate("comments").exec()
+  const userId = req.token;
+  articlesModel.find({})
     .then((articles) => {
       if (articles.length) {
-        res.status(200).json({success: true,message: 'All the article',userId: userId,article: article,comments: article.comments,like:article.like });
+        res.status(200).json({success: true,message: 'All the article',userId: userId,articles: articles,comments: articles.comments,like:articles.like });
       } else {
         res.status(200).json({ success: false,message:  'Articles', });
       }
