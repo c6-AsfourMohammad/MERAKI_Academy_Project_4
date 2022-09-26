@@ -27,9 +27,10 @@ err: err.message,
 });
   
 };
+//create function updateComment
 const updateComment = (req, res)=>{
   const _id = req.params.id;
-  articlesModel.findByIdAndUpdate(_id, req.body, { new: true })
+  commentsModel.findByIdAndUpdate(_id, req.body, { new: true })
 .then((result) => {
  if (!result) {
  return res.status(404).json({ success: false,message: ` ${_id} not found`});
@@ -41,5 +42,21 @@ res.status(202).json({success: true,message: 'Article updated',comment: result,}
     });
 };
 
-module.exports = {createNewComment,updateComment};
+//create delete comment
+const deleteComment = (req, res) => {
+  const _id = req.params.id;
+  commentsModel.findByIdAndDelete(_id)
+    .then((result) => {
+      if (!result) {
+        return res.status(404).json({success: false, message: ` ${_id} not found`});
+      }
+      res.status(200).json({success: true,message: 'Comment deleted'});
+    })
+    .catch((err) => {
+      res.status(500).json({success: false,message: 'Server Error',err: err.message});
+    });
+
+};
+
+module.exports = {createNewComment,updateComment,deleteComment};
   
