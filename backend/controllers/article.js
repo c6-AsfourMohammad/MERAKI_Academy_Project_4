@@ -58,7 +58,25 @@ const deleteArticle = (req, res) => {
 
 };
 
+const getAllArticles = (req, res) => {
+  const userId = req.token.userId;
+  articlesModel.find({}).populate("comments").exec()
+    .then((articles) => {
+      if (articles.length) {
+        res.status(200).json({success: true,message: 'All the article',userId: userId,article: article,comments: article.comments,like:article.like });
+      } else {
+        res.status(200).json({ success: false,message:  'Articles', });
+      }
+    })
+    .catch((err) => {
+      res.status(500).json({success: false,message: 'Server Error',err: err.message,
+      });
+    });
+};
 
 
-
-module.exports={createNewArticle,updateArticle,deleteArticle};
+module.exports={
+  createNewArticle,
+  updateArticle,
+  deleteArticle,
+  getAllArticles};
