@@ -28,13 +28,20 @@ user.save().then((result)=>{
 };
 
 
-//creat function Login
+//create function Login
 const Login=(req,res)=>{
     const password=req.body.password;
     const email=req.body.email;
     usersModel.find({email:email,password:password})
     .then((result)=>{
 console.log(result);
+if(email==email&&password==password){
+    res.json(result);
+    res.status(200)
+
+}else{
+    
+}
     }).catch((err)=>{
         console.log(err);
     })
