@@ -1,7 +1,7 @@
 const articlesModel = require("../models/articleSchema");
 
 
-
+//create function creatNewArtical
 const createNewArticle=(req,res)=>{
 const {post}=req.body;
 const poster=req.token;
