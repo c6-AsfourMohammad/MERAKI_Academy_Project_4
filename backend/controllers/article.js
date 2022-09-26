@@ -6,14 +6,9 @@ const createNewArticle=(req,res)=>{
 const {post}=req.body;
 const poster=req.token;
 const newArticle= new articlesModel({post,poster});
-newArticle
-.save()
+newArticle.save()
 .then((article) => {
-  res.status(201).json({
-    success: true,
-    message: `Article created`,
-    article: article,
-  });
+  res.status(201).json({success: true,message: 'Article created',article: article,});
 })
 .catch((err) => {
   res.status(500).json({
@@ -73,10 +68,26 @@ const getAllArticles = (req, res) => {
       });
     });
 };
+//create getArticlesByPoster
+const getArticlesByPoster = (req, res) => {
+  let posterId = req.query.poster;
 
+  articlesModel.find({ poster: posterId })
+  .then((articles) => {
+    if (!articles.length) {
+      return res.status(404).json({success: false,message: ` ${posterId} has no articles`,});
+      }
+      res.status(200).json({success: true, message: `All the articles  ${posterId}`,articles: articles,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({success: false,message: `Server Error`,err: err.message,});
+    });
+};
 
 module.exports={
   createNewArticle,
   updateArticle,
   deleteArticle,
-  getAllArticles};
+  getAllArticles,
+  getArticlesByPoster};
