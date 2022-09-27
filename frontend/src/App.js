@@ -3,6 +3,8 @@ import { Routes, Route, Link } from "react-router-dom";
 import Navigate from "./components/Navbar";
 import Register from "./components/Register";
 import Login from "./components/Login";
+import AddArticale from "./components/AddArticale";
+
 
 //import axios from 'axios';
 import "./App.css";
@@ -24,6 +26,8 @@ const [isLoggedIn ,setIsLoggedIn ]=useState(false)
        <Routes>
        <Route path="/" element={<Login />} />
        <Route path="/Register" element={<Register/>} />
+       <Route path="/AddArticale" element={<AddArticale/>} />
+
     
 
       {/* <h1>Hello world</h1> */}
