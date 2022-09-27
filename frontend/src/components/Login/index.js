@@ -4,17 +4,19 @@ import axios from "axios";
 
 const Login = () => {
   const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+
 const loginUser=()=>{
   axios.post("http://localhost:5000/login",
   {email:email,password:password}
   ).then((result)=>{
     window.localStorage.setItem("token",JSON.stringify(result.data.token))
     console.log(result.data.token);
+    // setMessage()
   }).catch((err)=>{
     console.log(err.data.message);
-
+setMessage(" please try again")
   });
 };
 
