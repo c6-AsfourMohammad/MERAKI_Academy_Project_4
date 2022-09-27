@@ -1,0 +1,9 @@
+.navbar{
+display: grid;
+}
+.links{
+ display: flex;
+    justify-content: center;
+    gap: 10%;
+    font-size: 200%;
+}

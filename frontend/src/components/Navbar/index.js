@@ -6,8 +6,9 @@ const Navigate=useNavigate();
 return(
 <div className="navbar">
     <div className="links">
-    <Link to='/'>Register</Link>
-    <Link to='/Login'>Login</Link>
+    <Link to='/'>Login</Link>
+    <Link to='/Register'>Register</Link>
+   
    
 
 
