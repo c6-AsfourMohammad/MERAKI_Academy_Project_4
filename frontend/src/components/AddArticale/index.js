@@ -5,26 +5,26 @@ import axios from "axios";
 import { newContext } from "../../App";
 const AddArticle=()=>{
 const [post, setPost] = useState("");
-const [poster, setPoster] = useState("6330b552f198916cada996eb");
+const [poster, setPoster] = useState("");
 const [comment, setComment] = useState("");
-
-const token =useContext(newContext);
-console.log(token)
+const [message, setMessage] = useState("");
+const{ token,isLoggedIn}  =useContext(newContext);
+//console.log(token)
 
 const newArticle=()=>{
-    axios.post("http://localhost:5000/articles/",{post:post},
+    axios.post("http://localhost:5000/articles/",{post:post,poster:poster},
     { headers:{'Authorization': 'Bearer '+token.token}})
     .then((response)=>{
        console.log(response.data);
       
      }).catch((err)=>{
-       console.log(err.response.data);
+       console.log(err);
      })
   }
-  return( <div >
-     <input type="text" 
+  return( <div className="Article">
+     <input className="post" type="text" 
      placeholder="post" onChange={(e)=>{setPost(e.target.value)}}/>
-      <button className="newartical" onClick={newArticle}>Create New Post</button>
+      <button className="articalButton" onClick={newArticle}>Create New Post</button>
       </div>
   )
 };
