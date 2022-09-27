@@ -84,7 +84,13 @@ const getArticlesByPoster = (req, res) => {
       res.status(500).json({success: false,message: `Server Error`,err: err.message,});
     });
 };
+//create function getArticlesByRegex
+// const getArticlesByRegex= async(req,res)=>{
+// const search=req.query.search;
+// const regex=new RegExp(search,"gi");
+// console.log(regex);
 
+// };
 module.exports={
   createNewArticle,
   updateArticle,
