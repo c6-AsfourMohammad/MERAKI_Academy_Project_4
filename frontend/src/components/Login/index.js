@@ -21,8 +21,8 @@ const loginUser=()=>{
 
 
 
-  return <div> 
-    <div className="Login">Login</div>
+  return <div className="Login"> 
+    <div className="LoginName">Login</div>
     {/* Email */}
     <input className="Email" onChange={(e)=>{
         setEmail(e.target.value)
@@ -32,7 +32,7 @@ const loginUser=()=>{
         setPassword(e.target.value)
     }} type="password" placeholder="Password"/>
     {/* logButton */}
-      <button className="logButton" onClick={loginUser}>Login</button>
+      <button className="LoginButton" onClick={loginUser}>Login</button>
     </div>;
 };
 export default Login;

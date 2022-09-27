@@ -2,6 +2,8 @@ import { useState,createContext,useEffect } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import Navigate from "./components/Navbar";
 import Register from "./components/Register";
+import Login from "./components/Login";
+
 //import axios from 'axios';
 import "./App.css";
 

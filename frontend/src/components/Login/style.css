@@ -1,0 +1,23 @@
+.Login{
+    display: grid;
+    justify-content: center;
+    margin-top: 20%;
+    font-size: 400%;
+    font-family: 'Courier New', Courier, monospace;
+    gap: 20%;
+}
+.Email{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30%;
+    height: 150%;
+}
+.password{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30%;
+    height: 150%;
+}
+.LoginButton{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30%;
+    height: 150%;
+}
