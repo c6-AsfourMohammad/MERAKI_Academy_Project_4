@@ -75,6 +75,11 @@ console.log(result.data.message);
      onChange={(e)=>{setPassword(e.target.value);}} 
   type="password" placeholder="Password"/>
     
+
+
+
+
+    
     <button className="RegisterButton" onClick={AddNewUser}>Register</button>
    
   </div>) ;
