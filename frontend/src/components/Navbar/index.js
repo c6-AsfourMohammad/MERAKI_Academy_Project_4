@@ -7,6 +7,7 @@ return(
 <div className="navbar">
     <div className="links">
     <Link to='/'>Register</Link>
+    <Link to='/Login'>Login</Link>
    
 
 

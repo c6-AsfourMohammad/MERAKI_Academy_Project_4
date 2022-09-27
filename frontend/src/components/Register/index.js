@@ -30,10 +30,12 @@ const AddNewUser=()=>{axios.post("http://localhost:5000/users/",
     role:role
   })
   .then((result)=>{
+    setMessage("The user has been created successfully");
 console.log(result.data.message);
+
   }).catch((err)=>{
     console.log(err.data.message);
-
+    setMessage("Error happened while register, please try again");
   });
 };
 
@@ -76,12 +78,12 @@ console.log(result.data.message);
   type="password" placeholder="Password"/>
     
 
+    <br />
+    {/* RegisterButton */}
 
-
-
-    
     <button className="RegisterButton" onClick={AddNewUser}>Register</button>
    
-  </div>) ;
+  </div>
+  ) ;
 };
 export default Register;

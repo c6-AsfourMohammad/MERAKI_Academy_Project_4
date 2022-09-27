@@ -11,6 +11,8 @@ function App() {
        <Navigate />
        <Routes>
        <Route path="/" element={<Register/>} />
+      <Route path="/Login" element={<Login />} />
+
       {/* <h1>Hello world</h1> */}
       </Routes>
     </div>
