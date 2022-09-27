@@ -1,0 +1,48 @@
+.Register{
+    display: grid;
+    justify-content: center;
+    margin-top: 20%;
+    font-size: 400%;
+    font-family: 'Courier New', Courier, monospace;
+    gap: 10%;
+}
+.RegisterButton{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30%;
+    height: 150%;
+}
+.firstName{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30%;
+    height: 150%;
+}
+.lastName{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30%;
+    height: 150%;
+}
+.age{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30%;
+    height: 150%;
+}
+.country{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30%;
+    height: 150%;
+}
+.bio{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30%;
+    height: 150%;
+}
+.email{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30%;
+    height: 150%;
+}
+.password{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30%;
+    height: 150%;
+}

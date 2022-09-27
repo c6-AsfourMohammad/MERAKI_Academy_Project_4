@@ -63,9 +63,9 @@ console.log(result.data.message);
      onChange={(e)=>{setBio(e.target.value);}}
      type="text" placeholder="Bio"/>
     {/* imgProfile */}
-    <input  className="imgProfile"
+    {/* <input  className="imgProfile"
      onChange={(e)=>{setImgProfile(e.target.value);}}
-     type="text" placeholder="imgProfile"/>
+     type="text" placeholder="imgProfile"/> */}
     {/* email */}
     <input  className="email"
      onChange={(e)=>{setEmail(e.target.value);}} 
