@@ -4,6 +4,8 @@ import Navigate from "./components/Navbar";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import AddArticale from "./components/AddArticale";
+import HomePage from "./components/HomePage";
+
 
 
 //import axios from 'axios';
@@ -27,6 +29,8 @@ const [isLoggedIn ,setIsLoggedIn ]=useState(false)
        <Route path="/" element={<Login />} />
        <Route path="/Register" element={<Register/>} />
        <Route path="/AddArticale" element={<AddArticale/>} />
+       <Route path="/HomePage" element={<HomePage/>} />
+
 
     
 
