@@ -14,7 +14,9 @@ const HomePage = () => {
   const [message, setMessage] = useState("");
   const { token, isLoggedIn } = useContext(newContext);
   const [userId, setUserId] = useState("");
-
+ const [updateArticles, setUpdateArticles] = useState(false);
+   const [articleId, setArticleId] = useState(false);
+//creat function getAllArticle
   const getAllArticle = () => {
     console.log("token : " + token);
     axios
@@ -30,9 +32,11 @@ const HomePage = () => {
         console.log(err.response.data);
       });
   };
-   const updateArticle = async (id) => {
+  
+  //create function updateArticle
+   const updateArticle =  (id) => {
     try {
-      await axios.put(`http://localhost:5000/articles/${id}`, {
+       axios.put(`http://localhost:5000/articles/${id}`, {
         post:post,
         poster:poster
       });
@@ -41,7 +45,15 @@ const HomePage = () => {
       console.log(error);
     }
   };
-
+  //Create function deleteArticle
+const deleteArticle=(id)=>{
+    try {
+         axios.delete(`http://localhost:5000/articles/${id}`);
+         getAllArticle();
+      } catch (error) {
+        console.log(error);
+      }
+};
   useEffect(() => {
     getAllArticle();
   }, []);
@@ -56,7 +68,9 @@ const HomePage = () => {
             <div key={i} className="postPage">
                
               <p className="post">{elem.post}</p>
-              <button className="UpdateButton">Update Post</button>
+              <button className="DeletePost"  onClick={()=>deleteArticle}>Delete Post</button>
+
+              <button className="UpdateButton" onClick={()=>updateArticle}>Update Post</button>
               <p className="comment">{elem.comment}</p>
               <div className="commentMain">
                
@@ -69,6 +83,7 @@ const HomePage = () => {
                 placeholder="comment"
               />
                <button className="buttonComment">AddComment</button>
+               
               </div>
             </div>
           );
