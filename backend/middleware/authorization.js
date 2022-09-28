@@ -4,7 +4,9 @@ const authorization=(string)=>{
         // const tokenPayload=req.token;
         // console.log(tokenPayload);
         if (!req.token.role.permissions.includes(string)) {
-          return res.status(403).json({success: false, message: `Unauthorized`,});
+
+          return res.status(403).json(
+            {success: false, message: `Unauthorized`,});
         }
         next();
       };

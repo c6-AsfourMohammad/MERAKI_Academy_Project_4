@@ -1,14 +1,14 @@
 const articlesModel = require("../models/articleSchema");
 
 
-//create function creatNewArtical
+//create function CreatNewArtical
 const createNewArticle=(req,res)=>{
 const {post}=req.body;
-const poster=req.token;
+const poster=req.token.userId;
 const newArticle= new articlesModel({post,poster});
 newArticle.save()
-.then((article) => {
-  res.status(201).json({success: true,message: 'Article created',article: article,});
+.then((result) => {
+  res.status(201).json({success: true,message: 'Article created',article: result});
 })
 .catch((err) => {
   res.status(500).json({
@@ -16,6 +16,8 @@ newArticle.save()
     message: `Server Error`,
     err: err.message,
   });
+  //console.log(err);
+
 });
 };
 //create function updateArticle
