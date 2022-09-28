@@ -9,7 +9,7 @@ return(
     <Link to='/'>Login</Link>
     <Link to='/Register'>Register</Link>
     <Link to='/AddArticale'>AddPost</Link>
-    <Link to='/HomePage'>HomePage</Link>
+    <Link to='/homePage'>homePage</Link>
 
     
 
