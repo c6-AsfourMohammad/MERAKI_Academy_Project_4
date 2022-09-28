@@ -12,7 +12,7 @@ const{ token,isLoggedIn}  =useContext(newContext);
 //console.log(token)
 
 const newArticle = async (e) => {
-    console.log(token);
+    //console.log(token);
     e.preventDefault();
     try {
       const article = {
@@ -20,7 +20,7 @@ const newArticle = async (e) => {
         poster,
       };
       const result = await axios.post(
-        "http://localhost:5000/articles",
+        "http://localhost:5000/articles/",
         article,
         {
           headers: {
@@ -29,7 +29,7 @@ const newArticle = async (e) => {
         }
       );
       if (result.data.success) {
-       
+       console.log("The article has been created successfully");
         setMessage("The article has been created successfully");
       }
     } catch (error) {
