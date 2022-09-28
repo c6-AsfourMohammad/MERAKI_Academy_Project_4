@@ -39,6 +39,7 @@ const login = (req, res) => {
         res
           .status(200)
           .json({ message: "Valid login credentials", token: token });
+          console.log(token);
       } catch (err) {
         throw new Error(err.message);
       }

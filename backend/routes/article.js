@@ -2,8 +2,14 @@ const express = require("express");
 const authentication = require("../middleware/authentication");
 const authorization = require("../middleware/authorization");
 
-const {createNewArticle,updateArticle, deleteArticle,getAllArticles,getArticlesByPoster}=require("../controllers/article");
-const { createNewComment,updateComment ,deleteComment} = require("./../controllers/comment");
+const {createNewArticle,
+    updateArticle,
+     deleteArticle,
+     getAllArticles,
+     getArticlesByPoster}=require("../controllers/article");
+const { createNewComment,
+    updateComment ,
+    deleteComment} = require("./../controllers/comment");
 
 
 
