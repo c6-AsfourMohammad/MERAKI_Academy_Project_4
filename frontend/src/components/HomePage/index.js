@@ -43,6 +43,8 @@ const HomePage = () => {
             <div key={i} className="postPage">
               <p className="post">{elem.post}</p>
               <p className="comment">{elem.comment}</p>
+              <div className="commentMain">
+               
               <input
                 className="comment"
                 onChange={(e) => {
@@ -51,6 +53,8 @@ const HomePage = () => {
                 type="comment"
                 placeholder="comment"
               />
+               <button className="buttonComment">AddComment</button>
+              </div>
             </div>
           );
         })}
