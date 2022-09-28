@@ -9,7 +9,7 @@ const login = (req, res) => {
   const password = req.body.password;
   const email = req.body.email.toLowerCase();
   usersModel
-    .findOne({ email: email }).populate("role")
+    .findOne({ email: email }) .populate("role", "-_id -__v")
     .then(async (result) => {
       // console.log("result : "+result);
       if (!result) {

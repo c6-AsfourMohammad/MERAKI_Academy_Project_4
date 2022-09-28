@@ -29,6 +29,17 @@ const newArticle=()=>{
     { headers:{'Authorization': 'Bearer '+token}})
     
  };
+//  const updateArticle = async (id) => {
+//     try {
+//       await axios.put(`http://localhost:5000/articles/${id}`, {
+//         post:post,
+//         poster:poster
+//       });
+//       getAllArticle();
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   };
 
   return( <div className="Article">
     

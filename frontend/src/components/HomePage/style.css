@@ -1,5 +1,22 @@
+.HomePage{
+    gap: 70%;
+}
+
 .commentMain{
     display: grid;
     justify-content: center;
-    
+    gap: 100%;
+}
+.post{
+  
+    font-size: 250%;
+    border: 3px solid rgb(76, 33, 246);
+  border-radius: 50px 50px;
+ 
+
+}
+.comment{
+   
+    border: 1px solid rgb(135, 133, 140);
+  border-radius: 50px 50px;
 }

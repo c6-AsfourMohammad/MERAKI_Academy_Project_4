@@ -57,8 +57,8 @@ const deleteArticle = (req, res) => {
 //create function getAllArticles
 const getAllArticles = (req, res) => {
   const userId = req.token;
-  articlesModel.find({})
-    .then((articles) => {
+  articlesModel.find({}) 
+  .then((articles) => {
       if (articles.length) {
         res.status(200).json({success: true,message: 'All the article',userId: userId,articles: articles,comments: articles.comments,like:articles.like });
       } else {

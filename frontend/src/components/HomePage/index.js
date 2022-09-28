@@ -30,9 +30,22 @@ const HomePage = () => {
         console.log(err.response.data);
       });
   };
+   const updateArticle = async (id) => {
+    try {
+      await axios.put(`http://localhost:5000/articles/${id}`, {
+        post:post,
+        poster:poster
+      });
+      getAllArticle();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     getAllArticle();
   }, []);
+  
 
   return (
     <div className="HomePage">
@@ -41,7 +54,9 @@ const HomePage = () => {
         articles.map((elem, i) => {
           return (
             <div key={i} className="postPage">
+               
               <p className="post">{elem.post}</p>
+              <button className="UpdateButton">Update Post</button>
               <p className="comment">{elem.comment}</p>
               <div className="commentMain">
                
