@@ -18,6 +18,8 @@ const HomePage = () => {
   const [userId, setUserId] = useState("");
  const [updateArticles, setUpdateArticles] = useState(false);
    const [articleId, setArticleId] = useState(false);
+   const[newComment,setnewComment]=useState([]);
+
 //creat function getAllArticle
   const getAllArticle = () => {
     console.log("token : " + token);
@@ -66,16 +68,16 @@ const HomePage = () => {
   useEffect(() => {
     getAllArticle();
   }, []);
-  const createNewComment =  (id) => {
-    try {
-       axios.post(`http://localhost:5000/articles/${id}/comments`,{comment:comment},
-        {headers: { Authorization: `Bearer ${token}`}
-        });
-      getAllArticle();
-    } catch (error) {
-      console.log(error.response);
-    }
-  };
+//   const createNewComment =  (id) => {
+//     try {
+//        axios.post(`http://localhost:5000/articles/${id}/comments`,{comment:comment},
+//         {headers: { Authorization: `Bearer ${token}`}
+//         });
+//       getAllArticle();
+//     } catch (error) {
+//       console.log(error.response);
+//     }
+//   };
 
   return (
     <div className="HomePage">
@@ -113,12 +115,23 @@ const HomePage = () => {
               <div className="commentMain">
                
               <input className="commentInput"onChange={(e) => {
-                  setComment(e.target.value);
+                  setnewComment(e.target.value);
                 }}
                 type="comment"
                 placeholder="comment"
               />
-               <button className="buttonComment" onClick={()=>createNewComment}>AddComment</button>
+                <button id={elem._id} onClick={(e)=>{
+            axios.post(`http://localhost:5000/articles/${e.target.id}/comments/`,
+            {Comment:[newComment]})
+            .then((response)=>{
+                console.log("done");
+                console.log(response.data);
+            }).catch((err)=>{
+                console.log(err);
+        
+            })
+            
+        }}>Add comment</button>
                
               </div>
             </div>

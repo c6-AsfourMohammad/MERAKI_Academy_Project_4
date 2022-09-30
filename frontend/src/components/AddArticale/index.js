@@ -4,6 +4,9 @@ import "./style.css";
 import axios from "axios";
 import { newContext } from "../../App";
 const AddArticle=()=>{
+const [user, setUser] = useState([]);
+const [firstName, setfirstName] = useState("");
+
 const [post, setPost] = useState("");
 const [poster, setPoster] = useState("");
 const [bio, setbio] = useState("");
@@ -44,7 +47,16 @@ const newArticle=()=>{
 
 
   return( <div className="Article">
-   
+<div>
+    {user&&user.map((elem,i)=>{
+        return <div className="profile">
+            <p>{elem.firstName}</p>
+            <p>{elem.bio}</p>
+        </div>
+
+        
+    })}
+</div>
      <input className="post" type="text" 
      placeholder="post" onChange={(e)=>{setPost(e.target.value)}}/>
       <button className="articalButton" onClick={newArticle}>Create New Post</button>
