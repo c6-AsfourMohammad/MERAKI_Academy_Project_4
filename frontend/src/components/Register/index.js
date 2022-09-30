@@ -44,6 +44,8 @@ console.log(result.data.message);
 
   return( <div className="Register">
     <div className="NameRegister">Register</div>
+    <img className="imgR" src={"https://static.vecteezy.com/system/resources/previews/003/689/224/non_2x/online-registration-or-sign-up-login-for-account-on-smartphone-app-user-interface-with-secure-password-mobile-application-for-ui-web-banner-access-cartoon-people-illustration-vector.jpg"} />
+
     {/* firstName */}
     <input className="firstName"
      onChange={(e)=>{setFirstName(e.target.value);}}

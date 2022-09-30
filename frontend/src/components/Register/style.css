@@ -1,15 +1,25 @@
 .Register{
     display: grid;
     justify-content: center;
-    margin-top: 20%;
+    margin-top: 5%;
     font-size: 400%;
     font-family: 'Courier New', Courier, monospace;
-    gap: 10%;
+    gap: 5%;
 }
 .RegisterButton{
     font-family: 'Courier New', Courier, monospace;
     font-size: 30%;
     height: 150%;
+   background-color: rgb(6, 6, 98);
+ border-radius: 4px;
+ color: aliceblue;
+
+   
+}
+.RegisterButton:hover{
+ color:aliceblue ;
+ font-size: 40%;
+
 }
 .firstName{
     font-family: 'Courier New', Courier, monospace;
@@ -45,4 +55,9 @@
     font-family: 'Courier New', Courier, monospace;
     font-size: 30%;
     height: 150%;
+}
+.imgR{
+
+height: 255px;
+width: 255px;
 }

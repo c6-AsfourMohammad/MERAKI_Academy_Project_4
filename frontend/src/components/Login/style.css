@@ -1,7 +1,7 @@
 .Login{
     display: grid;
     justify-content: center;
-    margin-top: 20%;
+    margin-top: 5%;
     font-size: 400%;
     font-family: 'Courier New', Courier, monospace;
     gap: 20%;
@@ -16,8 +16,27 @@
     font-size: 30%;
     height: 150%;
 }
+/* .LoginButton{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30%;
+    height: 150%;
+} */
 .LoginButton{
     font-family: 'Courier New', Courier, monospace;
     font-size: 30%;
     height: 150%;
+   background-color: rgb(6, 6, 98);
+ border-radius: 4px;
+ color: aliceblue;
+
+   
+}
+.LoginButton:hover{
+ color:aliceblue ;
+ font-size: 40%;
+
+}
+.popup{
+    font-size: 100%;
+    background-color: brown;
 }

@@ -1,9 +1,22 @@
 .navbar{
 display: grid;
+background-color: rgb(6, 6, 98);
 }
 .links{
  display: flex;
     justify-content: center;
     gap: 10%;
     font-size: 200%;
+    color: aliceblue;
+}
+.imgLogo{
+    width: 10%;
+    height: 30%;
+
+}
+.li{
+    margin-top: 2%;
+    font-family: 'Courier New', Courier, monospace;
+    color: aliceblue;
+    text-decoration: none;
 }
