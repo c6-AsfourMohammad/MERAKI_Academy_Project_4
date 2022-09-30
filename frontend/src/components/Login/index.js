@@ -63,11 +63,11 @@ setMessage(" please try again")
         setPassword(e.target.value)
     }} type="password" placeholder="Password"/>
     {/* logButton */}
-      {/* <button className="LoginButton" onClick={loginUser}>Login</button> */}
+      <button className="LoginButton" onClick={loginUser}>Login</button>
      
-      <Popup className="popup" trigger={ <button className="LoginButton" onClick={loginUser}>Login</button>} position="right center">
+      {/* <Popup className="popup" trigger={ <button className="LoginButton" onClick={loginUser}>Login</button>} position="right center">
     <div>welcome again</div>
-  </Popup>
+  </Popup> */}
  
     </div>;
 };
