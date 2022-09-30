@@ -25,8 +25,7 @@ const HomePage = () => {
 //creat function getAllArticle
   const getAllArticle = () => {
     console.log("token : " + token);
-    axios
-      .get("http://localhost:5000/articles/", {
+    axios.get("http://localhost:5000/articles/", {
         headers: { Authorization: "Bearer " + token },
       })
       .then((response) => {

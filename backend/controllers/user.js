@@ -118,7 +118,7 @@ const updateUser = (req, res)=>{
     let _id = req.query.id;
     usersModel
       .findById(_id)
-      .populate("bio", "firstName -_id")
+      .populate( "firstName -_id")
       .exec()
       .then((result) => {
         if (!result) {

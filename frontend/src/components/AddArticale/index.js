@@ -48,16 +48,17 @@ const newArticle=()=>{
 //     }
 //   };
 
-const getUser = () => {
+const getUser = (id) => {
     console.log("token : " + token);
+    
     axios
-      .get("http://localhost:5000/users/", {
+      .get(`http://localhost:5000/users/search_2?id=${id}`, {
         headers: { Authorization: "Bearer " + token },
       })
       .then((response) => {
-        console.log(response.data);
+        console.log(response.data.user);
         setUser([...response.data.user]);
-       
+        console.log(user);
       })
       .catch((err) => {
         console.log(err.response.data);
@@ -70,7 +71,7 @@ const getUser = () => {
    
 <div>
     
-    {userId &&isLoggedIn&&user.map((elem,i)=>{
+    {isLoggedIn&&user.map((elem,i)=>{
     
         return( 
         <div className="profile">
