@@ -2,7 +2,7 @@ import React, { useContext, useState,useEffect } from "react";
 import "./style.css";
 import axios from "axios";
 import Popup from 'reactjs-popup';
-import {GoogleLogin,GoogleLogout} from "react-google-login"
+//import {GoogleLogin,GoogleLogout} from "react-google-login"
 
 const Login = () => {
   const [email, setEmail] = useState("");
