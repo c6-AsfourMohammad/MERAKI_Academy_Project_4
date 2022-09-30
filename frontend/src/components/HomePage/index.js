@@ -11,6 +11,8 @@ const HomePage = () => {
   const [post, setPost] = useState("");
   const [poster, setPoster] = useState("");
   const [comment, setComment] = useState("");
+  const [commenter, setCommenter] = useState("");
+  
   const [message, setMessage] = useState("");
   const { token, isLoggedIn } = useContext(newContext);
   const [userId, setUserId] = useState("");
@@ -57,7 +59,16 @@ const deleteArticle=(id)=>{
   useEffect(() => {
     getAllArticle();
   }, []);
-  
+  const createNewComment =  (id) => {
+    try {
+       axios.post(`http://localhost:5000/articles/${id}/comments`,{comment:comment},
+        {headers: { Authorization: `Bearer ${token}`}
+        });
+      getAllArticles();
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
 
   return (
     <div className="HomePage">
@@ -68,6 +79,7 @@ const deleteArticle=(id)=>{
             <div key={i} className="postPage">
                
               <p className="post">{elem.post}</p>
+              <button className="Like">Like</button>
               <button className="DeletePost"  onClick={()=>deleteArticle}>Delete Post</button>
 
               <button className="UpdateButton" onClick={()=>updateArticle}>Update Post</button>

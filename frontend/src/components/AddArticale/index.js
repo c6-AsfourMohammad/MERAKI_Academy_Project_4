@@ -6,6 +6,7 @@ import { newContext } from "../../App";
 const AddArticle=()=>{
 const [post, setPost] = useState("");
 const [poster, setPoster] = useState("");
+const [bio, setbio] = useState("");
 const [comment, setComment] = useState("");
 const [message, setMessage] = useState("");
 const{ token,isLoggedIn}  =useContext(newContext);
@@ -41,8 +42,9 @@ const newArticle=()=>{
 //     }
 //   };
 
+
   return( <div className="Article">
-    
+   <p></p>
      <input className="post" type="text" 
      placeholder="post" onChange={(e)=>{setPost(e.target.value)}}/>
       <button className="articalButton" onClick={newArticle}>Create New Post</button>
