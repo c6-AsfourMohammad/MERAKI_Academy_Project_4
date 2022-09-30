@@ -12,7 +12,7 @@ const HomePage = () => {
   const [poster, setPoster] = useState("");
   const [comment, setComment] = useState([]);
   const [commenter, setCommenter] = useState("");
-  
+  const [updateInput, setUpdateInput] = useState(false);
   const [message, setMessage] = useState("");
   const { token, isLoggedIn } = useContext(newContext);
   const [userId, setUserId] = useState("");
@@ -34,7 +34,14 @@ const HomePage = () => {
         console.log(err.response.data);
       });
   };
-  
+  //create function handleUpdate 
+  const handleUpdate = (articles) => {
+    setUpdateInput(!updateInput);
+    setArticleId(articles._id);
+
+    setPost(articles.post);
+    if (updateInput) updateArticle(articles._id);
+  };
   //create function updateArticle
    const updateArticle =  (id) => {
     try {
@@ -83,7 +90,7 @@ const deleteArticle=(id)=>{
               <button className="Like">Like</button>
               <button className="DeletePost"  onClick={()=>deleteArticle}>Delete Post</button>
 
-              <button className="UpdateButton" onClick={()=>updateArticle}>Update Post</button>
+              <button className="UpdateButton" onClick={()=>handleUpdate(articles)}>Update Post</button>
               </div>
               <p className="comment">{elem.comment}</p>
               
