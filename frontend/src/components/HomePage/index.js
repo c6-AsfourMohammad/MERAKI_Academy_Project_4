@@ -55,14 +55,14 @@ const HomePage = () => {
     }
   };
   //Create function deleteArticle
-const deleteArticle=(id)=>{
-    try {
-         axios.delete(`http://localhost:5000/articles/${id}`);
-         getAllArticle();
-      } catch (error) {
-        console.log(error);
-      }
-};
+// const deleteArticle=(id)=>{
+//     try {
+//          axios.delete(`http://localhost:5000/articles/${id}`);
+//          getAllArticle();
+//       } catch (error) {
+//         console.log(error);
+//       }
+// };
   useEffect(() => {
     getAllArticle();
   }, []);
@@ -88,9 +88,25 @@ const deleteArticle=(id)=>{
               <p className="post">{elem.post}</p>
               <div className="buttonHome">
               <button className="Like">Like</button>
-              <button className="DeletePost"  onClick={()=>deleteArticle}>Delete Post</button>
+              <button className="DeletePost" id={elem._id} onClick={(e)=>{
+            axios.delete(`http://localhost:5000/articles/${e.target.id}`).then((res)=>{
+                console.log("delete");
+            }).catch((err)=>{
+                console.log(err);
+            })
+        }}>Delete</button>
 
-              <button className="UpdateButton" onClick={()=>handleUpdate(articles)}>Update Post</button>
+                
+        <button className="UpdateButton" id={elem._id} onClick={(e)=>{
+            axios.put(`http://localhost:5000/articles/${e.target.id}`,{post})
+            .then((response)=>{
+                
+                console.log(response);
+                console.log("Update Done");
+            }).catch((err)=>{
+                console.log(err);
+            });
+        }}>Update</button>
               </div>
               <p className="comment">{elem.comment}</p>
               

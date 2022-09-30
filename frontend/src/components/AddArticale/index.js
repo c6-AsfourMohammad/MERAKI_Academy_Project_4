@@ -44,7 +44,7 @@ const newArticle=()=>{
 
 
   return( <div className="Article">
-   <p></p>
+   
      <input className="post" type="text" 
      placeholder="post" onChange={(e)=>{setPost(e.target.value)}}/>
       <button className="articalButton" onClick={newArticle}>Create New Post</button>
