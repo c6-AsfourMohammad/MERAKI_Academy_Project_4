@@ -1,22 +1,46 @@
 .HomePage{
+    margin-top: 10%;
     gap: 70%;
+    border: 3px solid rgb(76, 33, 246);
+    
 }
 
 .commentMain{
-    display: grid;
+    display: flex;
     justify-content: center;
-    gap: 100%;
+    /* gap: 10%; */
+    
+}
+.comment{
+    background-color: rgb(186, 195, 195);
 }
 .post{
-  
     font-size: 250%;
-    border: 3px solid rgb(76, 33, 246);
-  border-radius: 50px 50px;
+    border: 2px solid rgb(98, 97, 101);
+    border-top:5px solid rgb(98, 97, 101);
+    border-bottom: 0px solid rgb(98, 97, 101);
+
+  /* border-radius: 50px 50px; */
  
 
 }
-.comment{
-   
-    border: 1px solid rgb(135, 133, 140);
-  border-radius: 50px 50px;
+
+  
+    /* border: 1px solid rgb(135, 133, 140); */
+  /* border-radius: 50px 50px; */
+
+.buttonHome{
+    display: flex;
+    justify-content: center;
+    gap: 1%;
+
+}
+.Like{
+    font-size: 150%;
+}
+.DeletePost{
+    font-size: 150%;
+}
+.UpdateButton{
+    font-size: 150%;
 }

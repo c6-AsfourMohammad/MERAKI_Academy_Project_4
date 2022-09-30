@@ -10,7 +10,7 @@ const HomePage = () => {
   const [articles, setArticles] = useState([]);
   const [post, setPost] = useState("");
   const [poster, setPoster] = useState("");
-  const [comment, setComment] = useState("");
+  const [comment, setComment] = useState([]);
   const [commenter, setCommenter] = useState("");
   
   const [message, setMessage] = useState("");
@@ -64,7 +64,7 @@ const deleteArticle=(id)=>{
        axios.post(`http://localhost:5000/articles/${id}/comments`,{comment:comment},
         {headers: { Authorization: `Bearer ${token}`}
         });
-      getAllArticles();
+      getAllArticle();
     } catch (error) {
       console.log(error.response);
     }
@@ -72,29 +72,30 @@ const deleteArticle=(id)=>{
 
   return (
     <div className="HomePage">
-      <h1>HomePage</h1>
+      {/* <h1>HomePage</h1> */}
       {articles &&
         articles.map((elem, i) => {
           return (
             <div key={i} className="postPage">
                
               <p className="post">{elem.post}</p>
+              <div className="buttonHome">
               <button className="Like">Like</button>
               <button className="DeletePost"  onClick={()=>deleteArticle}>Delete Post</button>
 
               <button className="UpdateButton" onClick={()=>updateArticle}>Update Post</button>
+              </div>
               <p className="comment">{elem.comment}</p>
+              
               <div className="commentMain">
                
-              <input
-                className="comment"
-                onChange={(e) => {
+              <input className="commentInput"onChange={(e) => {
                   setComment(e.target.value);
                 }}
                 type="comment"
                 placeholder="comment"
               />
-               <button className="buttonComment">AddComment</button>
+               <button className="buttonComment" onClick={()=>createNewComment}>AddComment</button>
                
               </div>
             </div>
