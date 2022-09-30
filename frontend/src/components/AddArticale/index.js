@@ -5,8 +5,10 @@ import axios from "axios";
 import { newContext } from "../../App";
 const AddArticle=()=>{
 const [user, setUser] = useState([]);
-const [firstName, setfirstName] = useState("");
+const [userId, setUserId] = useState("");
 
+const [firstName, setfirstName] = useState("");
+const [country, setCountry] = useState("");
 const [post, setPost] = useState("");
 const [poster, setPoster] = useState("");
 const [bio, setbio] = useState("");
@@ -33,6 +35,7 @@ const newArticle=()=>{
     { headers:{'Authorization': 'Bearer '+token}})
     
  };
+ 
 //  const updateArticle = async (id) => {
 //     try {
 //       await axios.put(`http://localhost:5000/articles/${id}`, {
@@ -45,17 +48,41 @@ const newArticle=()=>{
 //     }
 //   };
 
-
+const getUser = () => {
+    console.log("token : " + token);
+    axios
+      .get("http://localhost:5000/users/", {
+        headers: { Authorization: "Bearer " + token },
+      })
+      .then((response) => {
+        console.log(response.data);
+        setUser([...response.data.user]);
+       
+      })
+      .catch((err) => {
+        console.log(err.response.data);
+      });
+  };
+  useEffect(() => {
+    getUser();
+  }, []);
   return( <div className="Article">
+   
 <div>
-    {user&&user.map((elem,i)=>{
-        return <div className="profile">
+    
+    {userId &&isLoggedIn&&user.map((elem,i)=>{
+    
+        return( 
+        <div className="profile">
+            
             <p>{elem.firstName}</p>
             <p>{elem.bio}</p>
-        </div>
+            <p>{elem.country}</p>
+        </div>)
 
         
     })}
+    
 </div>
      <input className="post" type="text" 
      placeholder="post" onChange={(e)=>{setPost(e.target.value)}}/>

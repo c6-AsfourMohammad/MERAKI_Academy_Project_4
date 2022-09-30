@@ -12,6 +12,8 @@
     
 }
 .comment{
+    display:flex;
+   
     background-color: rgb(186, 195, 195);
 }
 .post{

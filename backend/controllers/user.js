@@ -91,4 +91,54 @@ const updateUser = (req, res)=>{
         res.status(500).json({success: false,message: 'Server Error', err: err.message,});
       });
   };
-module.exports={register,updateUser};
+  const getUser = (req, res) => {
+    const userId = req.token;
+    usersModel.find({}) 
+    .then((user) => {
+        if (user.length) {
+          res.status(200).json({success: true,message: 'All the user',
+          userId: userId,
+          user: user,
+           firstName:user.firstName,
+          lastName:user.lastName,
+          age:user.age,
+          country:user.country,
+          bio:user.bio,
+          imgProfile:user.imgProfile,});
+        } else {
+          res.status(200).json({ success: false,message:  'user', });
+        }
+      })
+      .catch((err) => {
+        res.status(500).json({success: false,message: 'Server Error',err: err.message,
+        });
+      });
+  };
+  const getUserById = (req, res) => {
+    let _id = req.query.id;
+    usersModel
+      .findById(_id)
+      .populate("bio", "firstName -_id")
+      .exec()
+      .then((result) => {
+        if (!result) {
+          return res.status(404).json({
+            success: false,
+            message: `The user is not found`,
+          });
+        }
+        res.status(200).json({
+          success: true,
+          message: `The user ${_id} `,
+          article: result,
+        });
+      })
+      .catch((err) => {
+        res.status(500).json({
+          success: false,
+          message: `Server Error`,
+          err: err.message,
+        });
+      });
+  };
+module.exports={register,updateUser,getUser,getUserById};

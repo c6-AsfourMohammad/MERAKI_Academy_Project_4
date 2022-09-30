@@ -19,6 +19,8 @@ const HomePage = () => {
  const [updateArticles, setUpdateArticles] = useState(false);
    const [articleId, setArticleId] = useState(false);
    const[newComment,setnewComment]=useState([]);
+  const [Newpost, setNewpost] = useState("");
+
 
 //creat function getAllArticle
   const getAllArticle = () => {
@@ -98,9 +100,16 @@ const HomePage = () => {
             })
         }}>Delete</button>
 
-                
+                <div className="UpdateMain">
+                <input className="postInput"onChange={(e) => {
+                  setNewpost(e.target.value);
+                }}
+                type="post"
+                placeholder="post"
+              />
         <button className="UpdateButton" id={elem._id} onClick={(e)=>{
-            axios.put(`http://localhost:5000/articles/${e.target.id}`,{post})
+           
+            axios.put(`http://localhost:5000/articles/${e.target.id}`,{post:Newpost})
             .then((response)=>{
                 
                 console.log(response);
@@ -109,6 +118,7 @@ const HomePage = () => {
                 console.log(err);
             });
         }}>Update</button>
+         </div>
               </div>
               <p className="comment">{elem.comment}</p>
               
