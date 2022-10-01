@@ -39,8 +39,11 @@ color: aliceblue;
 }
 .Like{
     font-size: 150%;
+    font-family: 'Courier New', Courier, monospace;
+
 }
 .DeletePost{
+    font-family: 'Courier New', Courier, monospace;
     
     font-size: 150%;
 }

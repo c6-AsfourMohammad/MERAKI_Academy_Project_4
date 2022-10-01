@@ -67,6 +67,10 @@ const getUser = (id) => {
   useEffect(() => {
     getUser();
   }, []);
+  const handleFile=(e)=>{
+    console.log(e.target.files);
+    console.log(e.target.files[0]);
+  }
   return( <div className="Article">
    
 <div>
@@ -84,6 +88,10 @@ const getUser = (id) => {
         
     })}
     
+</div>
+<div>
+<input  className="file" type="file" onChange={(e)=>{
+handleFile(e)}}/>
 </div>
      <input className="post" type="text" 
      placeholder="post" onChange={(e)=>{setPost(e.target.value)}}/>

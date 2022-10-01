@@ -22,6 +22,8 @@ const HomePage = () => {
   const [Newpost, setNewpost] = useState("");
   const [likes, setLikes] = useState(0);
   const [isClicked, setIsClicked] = useState(false);
+	const [selectedFile, setSelectedFile] = useState();
+	const [isFilePicked, setIsFilePicked] = useState(false);
 
 //creat function getAllArticle
   const getAllArticle = () => {
@@ -101,7 +103,10 @@ const HomePage = () => {
                
               <p className="post">{elem.post}</p>
               <div className="buttonHome">
-              <button className={ `like-button ${isClicked && 'liked'}` } onClick={ handleClick }>
+              <button 
+              className="like"
+              // className={ `like-button ${isClicked && 'liked'}` }
+               onClick={ handleClick }>
       <span className="likes-counter">{ `Like | ${likes}` }</span>.
     </button>
               <button className="DeletePost" id={elem._id} onClick={(e)=>{
