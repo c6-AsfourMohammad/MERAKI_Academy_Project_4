@@ -115,7 +115,7 @@ const updateUser = (req, res)=>{
       });
   };
   const getUserById = (req, res) => {
-    let _id = req.params.id;
+    let _id = req.token.userId;
     usersModel.findById(_id)
       .populate( "_id")
       .exec()
@@ -129,7 +129,7 @@ const updateUser = (req, res)=>{
         res.status(200).json({
           success: true,
           message: `The user ${_id} `,
-          article: result,
+          user: result,
         });
       })
       .catch((err) => {

@@ -14,7 +14,7 @@ const [bio, setbio] = useState("");
 const [comment, setComment] = useState("");
 const [message, setMessage] = useState("");
 const{ token,isLoggedIn}  =useContext(newContext);
-//console.log(token)
+
 
 const newArticle=()=>{
     axios.post("http://localhost:5000/articles/",{post:post,poster:poster},
@@ -51,23 +51,24 @@ const newArticle=()=>{
 const getUser = () => {
     console.log("token : " + token);
     
-    axios.get(`http://localhost:5000/users/`, {
+    axios.get(`http://localhost:5000/users/one`, {
         headers: { Authorization: "Bearer " + token },
       })
       .then((response) => {
-        console.log(response.data.user);
-        setUser([...response.data.user]);
+        // console.log(response.data.user);
+        setUser([...user]);
         // setUserId(user._id)
-        console.log(user);
+        console.log(response.data.user);
       
       })
       .catch((err) => {
-        console.log(err.response.data);
+         console.log(err);
       });
   };
   useEffect(() => {
     getUser();
   }, []);
+
   //create function uploaded file
   const handleFile=(e)=>{
     console.log(e.target.files);
@@ -79,15 +80,13 @@ const getUser = () => {
    
 <div>
     
-    {user.map((elem,i)=>{
+    {user&&user.map((elem,i)=>{
     //return map function 
         return( 
+          
         <div key={i} className="profile">
-            
             <p className="firstName">{elem.firstName}</p>
-            
             <p className="lastName">{elem.lastName} </p>
-
             <p className="bio"><br/> Bio:{elem.bio}</p>
             <p className="country"><br/>Country:{elem.country}</p>
         </div>)
