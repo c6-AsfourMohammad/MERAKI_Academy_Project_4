@@ -5,15 +5,17 @@ import axios from "axios";
 import { newContext } from "../../App";
 const AddArticle=()=>{
 const [user, setUser] = useState([]);
-const [userId, setUserId] = useState("");
-const [firstName, setfirstName] = useState("");
-const [country, setCountry] = useState("");
+// const [userId, setUserId] = useState("");
+// const [firstName, setfirstName] = useState("");
+// const [country, setCountry] = useState("");
 const [post, setPost] = useState("");
 const [poster, setPoster] = useState("");
-const [bio, setbio] = useState("");
-const [comment, setComment] = useState("");
+// const [bio, setbio] = useState("");
+// const [comment, setComment] = useState("");
 const [message, setMessage] = useState("");
 const{ token,isLoggedIn}  =useContext(newContext);
+const [selectedFile, setSelectedFile] = useState();
+const [isFilePicked, setIsFilePicked] = useState(false);
 
 
 const newArticle=()=>{
@@ -56,10 +58,10 @@ const getUser = () => {
       })
       .then((response) => {
         // console.log(response.data.user);
-        setUser([...user]);
+         setUser([response.data.user]);
         // setUserId(user._id)
         console.log(response.data.user);
-      
+      // console.log(user);
       })
       .catch((err) => {
          console.log(err);
@@ -77,25 +79,27 @@ const getUser = () => {
   //return  main function 
   return( 
   <div className="Article">
-   
-<div>
-    
+
     {user&&user.map((elem,i)=>{
     //return map function 
         return( 
-          
         <div key={i} className="profile">
             <p className="firstName">{elem.firstName}</p>
-            <p className="lastName">{elem.lastName} </p>
-            <p className="bio"><br/> Bio:{elem.bio}</p>
+            {/* <p className="lastName">{elem.lastName} </p> */}
+            <p className="bio"><br/>Bio: {elem.bio}</p>
             <p className="country"><br/>Country:{elem.country}</p>
+            <p className="Age"><br/>Age:{elem.age}</p>
+            <img className="img" src={`${elem.imgProfile}`}/>
+            
+
         </div>)
 
         
     })}
     
-</div>
+
 <div>
+
 <input  className="file" type="file" onChange={(e)=>{
 handleFile(e)}}/>
 </div>
