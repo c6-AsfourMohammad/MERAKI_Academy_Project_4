@@ -2,7 +2,8 @@ import React, { useContext, useState,useEffect } from "react";
 import "./style.css";
 import axios from "axios";
 import Popup from 'reactjs-popup';
-//import {GoogleLogin,GoogleLogout} from "react-google-login"
+import {GoogleLogin,GoogleLogout} from "react-google-login"
+import {Link, useNavigate }from 'react-router-dom'
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -25,12 +26,14 @@ const Login = () => {
   //   console.log("logout");
   //   setLoginStatus(false);
   // };
+  
 const loginUser=()=>{
   axios.post("http://localhost:5000/login",
   {email:email,password:password}
   ).then((result)=>{
     window.localStorage.setItem("token",JSON.stringify(result.data.token))
     console.log(result.data.token);
+   
     // setMessage()
   }).catch((err)=>{
     console.log(err.data.message);
@@ -39,7 +42,9 @@ setMessage(" please try again")
 };
 
 
-
+const responseGoogle = (response) => {
+  console.log(response);
+}
 
   return <div className="Login"> 
   
@@ -47,14 +52,17 @@ setMessage(" please try again")
     <img src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUyupe95d5oSN4BN-Ykga44hOxgqkVojz1Bgetfbw213GD1tRIULI7Ez6G2iKcFZV7f7w&usqp=CAU"} />
     {/* Email */}
     <div>
-      
+      {/* create login with Google */}
     </div>
-    {/* <GoogleLogin clientId={process.env.React_APP_GOOGLE_CLIENT_ID} 
+    <GoogleLogin
+    //  clientId="" 
       buttonText="Login"
         onSuccess={responseGoogle}
-        onFailure={responseGoogle}/>
+        onFailure={responseGoogle}
+        cookiePolicy={'single_host_origin'}
+        />
       
-     */}
+    
     <input className="Email" onChange={(e)=>{
         setEmail(e.target.value)
     }} type="email" placeholder="Email"/>

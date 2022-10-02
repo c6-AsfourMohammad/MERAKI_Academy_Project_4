@@ -48,11 +48,11 @@ const newArticle=()=>{
 //     }
 //   };
 
-const getUser = (id) => {
+//create function getUser 
+const getUser = () => {
     console.log("token : " + token);
     
-    axios
-      .get(`http://localhost:5000/users/search_2?id=${id}`, {
+    axios.get(`http://localhost:5000/users/`, {
         headers: { Authorization: "Bearer " + token },
       })
       .then((response) => {
@@ -67,16 +67,18 @@ const getUser = (id) => {
   useEffect(() => {
     getUser();
   }, []);
+  //create function uploaded file
   const handleFile=(e)=>{
     console.log(e.target.files);
     console.log(e.target.files[0]);
   }
+  //return  main function 
   return( <div className="Article">
    
 <div>
     
-    {isLoggedIn&&user.map((elem,i)=>{
-    
+    {user&&user.map((elem,i)=>{
+    //return map function 
         return( 
         <div className="profile">
             

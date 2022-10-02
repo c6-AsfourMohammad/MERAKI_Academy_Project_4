@@ -24,6 +24,7 @@ const HomePage = () => {
   const [isClicked, setIsClicked] = useState(false);
 	const [selectedFile, setSelectedFile] = useState();
 	const [isFilePicked, setIsFilePicked] = useState(false);
+  const [user, setUser] = useState([]);
 
 //creat function getAllArticle
   const getAllArticle = () => {
@@ -84,15 +85,23 @@ const HomePage = () => {
 //   };
 
  //create like counter
-
   const handleClick = () => {
     if (isClicked) {
       setLikes(likes - 1);
+      //setUserId(user._id);
     } else {
       setLikes(likes + 1);
+    
     }
     setIsClicked(!isClicked);
+   
+
   };
+
+  const handleFile=(e)=>{
+    console.log(e.target.files);
+    console.log(e.target.files[0]);
+  }
   return (
     <div className="HomePage">
       {/* <h1>HomePage</h1> */}
@@ -103,11 +112,10 @@ const HomePage = () => {
                
               <p className="post">{elem.post}</p>
               <div className="buttonHome">
-              <button 
-              className="like"
+              <button className="like"
               // className={ `like-button ${isClicked && 'liked'}` }
                onClick={ handleClick }>
-      <span className="likes-counter">{ `Like | ${likes}` }</span>.
+      <span >{ `Like | ${likes}` }</span>.
     </button>
               <button className="DeletePost" id={elem._id} onClick={(e)=>{
             axios.delete(`http://localhost:5000/articles/${e.target.id}`).then((res)=>{

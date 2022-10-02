@@ -52,6 +52,8 @@ color: aliceblue;
 
     font-size: 150%;
 }
-.likes-counter{
+.like{
+    font-size: 100%;
+
     font-family: 'Courier New', Courier, monospace;
 }

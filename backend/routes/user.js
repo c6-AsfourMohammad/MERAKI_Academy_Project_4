@@ -9,7 +9,7 @@ const usersRouter=express.Router();
 usersRouter.post("/", register);
 usersRouter.put("/:id", updateUser);
 usersRouter.get("/", getUser);
-usersRouter.get("/search_2", getUserById);
+usersRouter.get("/:id", getUserById);
 
 
 

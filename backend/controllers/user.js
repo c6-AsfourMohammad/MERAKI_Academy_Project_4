@@ -115,10 +115,9 @@ const updateUser = (req, res)=>{
       });
   };
   const getUserById = (req, res) => {
-    let _id = req.query.id;
-    usersModel
-      .findById(_id)
-      .populate( "firstName -_id")
+    let _id = req.params.id;
+    usersModel.findById(_id)
+      .populate( "_id")
       .exec()
       .then((result) => {
         if (!result) {
