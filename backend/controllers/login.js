@@ -38,7 +38,7 @@ const login = (req, res) => {
         const token = await jwt.sign(payload, process.env.SECRET, options);
         res
           .status(200)
-          .json({ message: "Valid login credentials", token: token });
+          .json({ message: "Valid login credentials",user:result, token: token });
           console.log(token);
       } catch (err) {
         throw new Error(err.message);

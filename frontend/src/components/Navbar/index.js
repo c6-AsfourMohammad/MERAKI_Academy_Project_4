@@ -11,6 +11,7 @@ return(
     <Link  className="li" to='/Register'>Register</Link>
     <Link  className="li" to='/AddArticale'>Profile</Link>
     <Link  className="li" to='/homePage'>homePage</Link>
+    <Link  className="li" to='/logOut'>Log Out</Link>
  
 
     

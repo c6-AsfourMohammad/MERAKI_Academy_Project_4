@@ -6,7 +6,6 @@ import { newContext } from "../../App";
 const AddArticle=()=>{
 const [user, setUser] = useState([]);
 const [userId, setUserId] = useState("");
-
 const [firstName, setfirstName] = useState("");
 const [country, setCountry] = useState("");
 const [post, setPost] = useState("");
@@ -58,7 +57,9 @@ const getUser = () => {
       .then((response) => {
         console.log(response.data.user);
         setUser([...response.data.user]);
+        // setUserId(user._id)
         console.log(user);
+      
       })
       .catch((err) => {
         console.log(err.response.data);
@@ -73,18 +74,22 @@ const getUser = () => {
     console.log(e.target.files[0]);
   }
   //return  main function 
-  return( <div className="Article">
+  return( 
+  <div className="Article">
    
 <div>
     
-    {user&&user.map((elem,i)=>{
+    {user.map((elem,i)=>{
     //return map function 
         return( 
-        <div className="profile">
+        <div key={i} className="profile">
             
-            <p>{elem.firstName}</p>
-            <p>{elem.bio}</p>
-            <p>{elem.country}</p>
+            <p className="firstName">{elem.firstName}</p>
+            
+            <p className="lastName">{elem.lastName} </p>
+
+            <p className="bio"><br/> Bio:{elem.bio}</p>
+            <p className="country"><br/>Country:{elem.country}</p>
         </div>)
 
         

@@ -1,14 +1,18 @@
 import React, { useContext, useState,useEffect } from "react";
 import "./style.css";
 import axios from "axios";
-import Popup from 'reactjs-popup';
+import { newContext } from "../../App";
+
+// import Popup from 'reactjs-popup';
 import {GoogleLogin,GoogleLogout} from "react-google-login"
 import {Link, useNavigate }from 'react-router-dom'
+
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const { token, isLoggedIn } = useContext(newContext);
 
   // const [name, setName] = useState("");
   //const [email, setEmail] = useState("");
@@ -41,7 +45,11 @@ setMessage(" please try again")
   });
 };
 
-
+useEffect(() => {
+  if (isLoggedIn) {
+    // useNavigate("/homePage");
+  }
+},[]);
 const responseGoogle = (response) => {
   console.log(response);
 }
