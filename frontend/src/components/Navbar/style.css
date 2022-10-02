@@ -20,3 +20,7 @@ background-color: rgb(6, 6, 98);
     color: aliceblue;
     text-decoration: none;
 }
+.search{
+    display: flex;
+
+}

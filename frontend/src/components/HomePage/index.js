@@ -3,6 +3,8 @@ import axios, { Axios } from "axios";
 import "./style.css";
 import { newContext } from "../../App";
 import { useState, useContext, useEffect } from "react";
+import {Link, useNavigate }from 'react-router-dom'
+
 //import { newContext } from "../../App";
 //import { Routes, Route, Link } from "react-router-dom";
 
@@ -25,7 +27,10 @@ const HomePage = () => {
 	const [selectedFile, setSelectedFile] = useState();
 	const [isFilePicked, setIsFilePicked] = useState(false);
   const [user, setUser] = useState([]);
-
+  const [loading, setLoading] = useState(false);
+  const [search, setSearch] = useState('');
+  const[IsLoggedIn,setIsLoggedIn]=useState(true);
+  const [Token, setToken] = useState("");
 //creat function getAllArticle
   const getAllArticle = () => {
     console.log("token : " + token);
@@ -104,6 +109,12 @@ const HomePage = () => {
   }
   return (
     <div className="HomePage">
+     <Link to="/Login" onClick={()=>{
+setIsLoggedIn(false)
+setToken("")
+localStorage.clear();
+  }}>Log Out</Link>
+      
       {/* <h1>HomePage</h1> */}
       {articles &&
         articles.map((elem, i) => {
