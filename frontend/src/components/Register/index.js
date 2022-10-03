@@ -1,11 +1,15 @@
 import React, { useContext, useState,useEffect } from "react";
 import "./style.css";
 import axios from "axios";
+import {Link, useNavigate }from 'react-router-dom'
+
 
 
 
 
 const Register = () => {
+  const history = useNavigate();
+
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [age, setAge] = useState(0);
@@ -31,6 +35,7 @@ const AddNewUser=()=>{axios.post("http://localhost:5000/users/",
   })
   .then((result)=>{
     setMessage("The user has been created successfully");
+history("/HomePage")
 console.log(result.data.message);
 
   }).catch((err)=>{

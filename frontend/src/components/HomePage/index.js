@@ -171,7 +171,7 @@ localStorage.clear();
         }}>Update</button>
          </div>
               </div>
-              <p className="comment">{elem.comment}</p>
+              <p className="comments">{elem.comment}</p>
               
               <div className="commentMain">
               <input className="commentInput" type="text" 

@@ -11,10 +11,11 @@
     /* gap: 10%; */
     
 }
-.comment{
-    display:flex;
+.comments{
+    display:grid;
    font-size: 120%;
     background-color: rgb(186, 195, 195);
+ 
 }
 .post{
     font-size: 250%;

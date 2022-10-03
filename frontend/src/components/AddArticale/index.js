@@ -74,8 +74,10 @@ const getUser = () => {
 
   //create function uploaded file
   const handleFile=(e)=>{
-    console.log(e.target.files);
-    console.log(e.target.files[0]);
+    // console.log(e.target.files);
+    // console.log(e.target.files[0]);
+    setImages(e)
+    console.log(e);
   }
   //return  main function 
   return( 
@@ -101,14 +103,16 @@ const getUser = () => {
 
 <div>
 
+<img  src={images} /> 
 
 <input  className="file" type="file" onChange={(e)=>{
-handleFile(e)}}/>
-  {images.map((elem, index) => (
-        <img key={index} src={elem.File.name} />
+  console.log(e);
+handleFile(e.target.value)}}/>
+  {/* {images.map((elem, index) => (
+        <img key={index} src={elem.file.name} />
        
-      ))}
-      
+      ))} */}
+       
 </div>
      <input className="post" type="text" 
      placeholder="post" onChange={(e)=>{setPost(e.target.value)}}/>

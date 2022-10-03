@@ -12,31 +12,11 @@ import ReactDOM from 'react-dom';
 
 
 const Login = () => {
+  const history = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const { token, isLoggedIn } = useContext(newContext);
-  // const { signIn, loaded } = useGoogleLogin({
-  //   onSuccess,
-  //   onAutoLoadFinished,
-  //   clientId,
-  //   cookiePolicy,
-  //   loginHint,
-  //   hostedDomain,
-  //   autoLoad,
-  //   isSignedIn,
-  //   fetchBasicProfile,
-  //   redirectUri,
-  //   discoveryDocs,
-  //   onFailure,
-  //   uxMode,
-  //   scope,
-  //   accessType,
-  //   responseType,
-  //   jsSrc,
-  //   onRequest,
-  //   prompt
-  // })
   // const [name, setName] = useState("");
   //const [email, setEmail] = useState("");
   // const [url, setUrl] = useState("");
@@ -60,6 +40,7 @@ const loginUser=()=>{
   ).then((result)=>{
     window.localStorage.setItem("token",JSON.stringify(result.data.token))
     console.log(result.data.token);
+history("/HomePage")
    
     // setMessage()
   }).catch((err)=>{
@@ -91,7 +72,7 @@ const responseGoogle = (response) => {
     <GoogleLogin
     className="Google"
     clientId="667694760446-9ot0r7lbg6r8senhbff2112monoi00a6.apps.googleusercontent.com"
-    clientSecret="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"
+     clientSecret="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"
       buttonText="Login With Google"
         onSuccess={responseGoogle}
         onFailure={responseGoogle}
@@ -108,11 +89,11 @@ const responseGoogle = (response) => {
         setPassword(e.target.value)
     }} type="password" placeholder="Password"/>
     {/* logButton */}
-      {/* <button className="LoginButton" onClick={loginUser}>Login</button> */}
+      <button className="LoginButton" onClick={loginUser}>Login </button>
      
-       <Popup className="popup" trigger={ <button className="LoginButton" onClick={loginUser}>Login</button>} position="right center">
+       {/* <Popup className="popup" trigger={ <button className="LoginButton" onClick={loginUser}>Login</button>} position="right center">
     <div>welcome again</div>
-  </Popup> 
+  </Popup>  */}
  
     </div>;
 };
