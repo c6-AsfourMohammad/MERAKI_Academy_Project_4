@@ -89,7 +89,7 @@ const getUser = () => {
             <p className="bio"><br/>Bio: {elem.bio}</p>
             <p className="country"><br/>Country:{elem.country}</p>
             <p className="Age"><br/>Age:{elem.age}</p>
-            <img className="img" src={`${elem.imgProfile}`}/>
+            <img className="img" src={`${elem.files}`}/>
             
 
         </div>)
@@ -100,11 +100,13 @@ const getUser = () => {
 
 <div>
 
+
 <input  className="file" type="file" onChange={(e)=>{
 handleFile(e)}}/>
 </div>
      <input className="post" type="text" 
      placeholder="post" onChange={(e)=>{setPost(e.target.value)}}/>
+     
       <button className="articalButton" onClick={newArticle}>Create New Post</button>
       </div>
   )

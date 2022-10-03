@@ -1,4 +1,5 @@
 import React, { useContext, useState,useEffect } from "react";
+
 import "./style.css";
 import axios from "axios";
 import { newContext } from "../../App";
@@ -6,6 +7,7 @@ import { newContext } from "../../App";
 // import Popup from 'reactjs-popup';
 import {GoogleLogin,GoogleLogout} from "react-google-login"
 import {Link, useNavigate }from 'react-router-dom'
+import { useGoogleLogin } from 'react-google-login'
 
 
 const Login = () => {
@@ -13,7 +15,27 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const { token, isLoggedIn } = useContext(newContext);
-
+  // const { signIn, loaded } = useGoogleLogin({
+  //   onSuccess,
+  //   onAutoLoadFinished,
+  //   clientId,
+  //   cookiePolicy,
+  //   loginHint,
+  //   hostedDomain,
+  //   autoLoad,
+  //   isSignedIn,
+  //   fetchBasicProfile,
+  //   redirectUri,
+  //   discoveryDocs,
+  //   onFailure,
+  //   uxMode,
+  //   scope,
+  //   accessType,
+  //   responseType,
+  //   jsSrc,
+  //   onRequest,
+  //   prompt
+  // })
   // const [name, setName] = useState("");
   //const [email, setEmail] = useState("");
   // const [url, setUrl] = useState("");
@@ -53,7 +75,9 @@ useEffect(() => {
 const responseGoogle = (response) => {
   console.log(response);
 }
-
+// const Failure=(result)=>{
+//   alert(result)
+// }
   return <div className="Login"> 
   
     <div className="LoginName">Login</div>
@@ -63,11 +87,12 @@ const responseGoogle = (response) => {
       {/* create login with Google */}
     </div>
     <GoogleLogin
-    //  clientId="" 
-      buttonText="Login"
+    clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+      buttonText="Login With Google"
         onSuccess={responseGoogle}
         onFailure={responseGoogle}
         cookiePolicy={'single_host_origin'}
+        isSignedIn={true}
         />
       
     

@@ -47,7 +47,7 @@ console.log(result.data.message);
     <img className="imgR" src={"https://static.vecteezy.com/system/resources/previews/003/689/224/non_2x/online-registration-or-sign-up-login-for-account-on-smartphone-app-user-interface-with-secure-password-mobile-application-for-ui-web-banner-access-cartoon-people-illustration-vector.jpg"} />
 
     {/* firstName */}
-    <input className="firstName"
+    <input className="firstNameR"
      onChange={(e)=>{setFirstName(e.target.value);}}
         type="text" placeholder="First Name"/>
     {/* lastName */}
@@ -63,7 +63,7 @@ console.log(result.data.message);
     onChange={(e)=>{setCountry(e.target.value);}}
     type="text" placeholder="Country"/>
     {/* bio */}
-    <input  className="bio"
+    <input  className="bioR"
      onChange={(e)=>{setBio(e.target.value);}}
      type="text" placeholder="Bio"/>
     {/* imgProfile */}

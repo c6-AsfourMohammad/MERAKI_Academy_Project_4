@@ -5,6 +5,7 @@
     font-size: 400%;
     font-family: 'Courier New', Courier, monospace;
     gap: 5%;
+
 }
 .RegisterButton{
     font-family: 'Courier New', Courier, monospace;
@@ -21,7 +22,7 @@
  font-size: 40%;
 
 }
-.firstName{
+.firstNameR{
     font-family: 'Courier New', Courier, monospace;
     font-size: 30%;
     height: 150%;
@@ -41,7 +42,7 @@
     font-size: 30%;
     height: 150%;
 }
-.bio{
+.bioR{
     font-family: 'Courier New', Courier, monospace;
     font-size: 30%;
     height: 150%;
