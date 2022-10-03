@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./style.css";
 import axios from "axios";
 import { newContext } from "../../App";
+import ImageUploading from 'react-images-uploading';
 const AddArticle=()=>{
 const [user, setUser] = useState([]);
 // const [userId, setUserId] = useState("");
@@ -16,7 +17,7 @@ const [message, setMessage] = useState("");
 const{ token,isLoggedIn}  =useContext(newContext);
 const [selectedFile, setSelectedFile] = useState();
 const [isFilePicked, setIsFilePicked] = useState(false);
-
+const [images, setImages] = useState([]);
 
 const newArticle=()=>{
     axios.post("http://localhost:5000/articles/",{post:post,poster:poster},
@@ -89,7 +90,7 @@ const getUser = () => {
             <p className="bio"><br/>Bio: {elem.bio}</p>
             <p className="country"><br/>Country:{elem.country}</p>
             <p className="Age"><br/>Age:{elem.age}</p>
-            <img className="img" src={`${elem.files}`}/>
+            {/* <img className="img" src={`${elem.files}`}/> */}
             
 
         </div>)
@@ -103,6 +104,11 @@ const getUser = () => {
 
 <input  className="file" type="file" onChange={(e)=>{
 handleFile(e)}}/>
+  {images.map((elem, index) => (
+        <img key={index} src={elem.File.name} />
+       
+      ))}
+      
 </div>
      <input className="post" type="text" 
      placeholder="post" onChange={(e)=>{setPost(e.target.value)}}/>
