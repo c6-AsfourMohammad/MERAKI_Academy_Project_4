@@ -5,6 +5,7 @@
     font-size: 400%;
     font-family: 'Courier New', Courier, monospace;
     gap: 20%;
+
 }
 .Email{
     font-family: 'Courier New', Courier, monospace;
@@ -37,6 +38,7 @@
 
 }
 .popup{
-    font-size: 100%;
-    background-color: brown;
+    font-size: 200%;
+    color: blue;
+  
 }
