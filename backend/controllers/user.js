@@ -36,7 +36,34 @@ user.save().then((result)=>{
 });
 };
 
-
+// const getALLUser=()=>{
+//   const userId = req.params.userId;
+//   usersModel
+//   .find({})
+//   .then((user) => {
+//     if (user.length) {
+//       res.status(200).json({
+//         success: true,
+//         message: `All the user`,
+//         userId: userId,
+//         user: user,
+      
+//       });
+//     } else {
+//       res.status(200).json({
+//         success: false,
+//         message: `No user Yet`,
+//       });
+//     }
+//   })
+//   .catch((err) => {
+//     res.status(500).json({
+//       success: false,
+//       message: `Server Error`,
+//       err: err.message,
+//     });
+//   });
+// }
 //create function Login
 // const Login=(req,res)=>{
 //     const password=req.body.password;
@@ -91,7 +118,7 @@ const updateUser = (req, res)=>{
         res.status(500).json({success: false,message: 'Server Error', err: err.message,});
       });
   };
-  const getUser = (req, res) => {
+  const getAllUser = (req, res) => {
     const userId = req.token;
     usersModel.find({}) 
     .then((user) => {
@@ -140,4 +167,5 @@ const updateUser = (req, res)=>{
         });
       });
   };
-module.exports={register,updateUser,getUser,getUserById};
+  
+module.exports={register,updateUser,getAllUser,getUserById};

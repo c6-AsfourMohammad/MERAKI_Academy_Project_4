@@ -5,18 +5,42 @@ import axios from "axios";
 import { newContext } from "../../App";
 import ImageUploading from 'react-images-uploading';
 const AddArticle=()=>{
-const [user, setUser] = useState([]);
+// const [user, setUser] = useState([]);
 // const [userId, setUserId] = useState("");
 // const [firstName, setfirstName] = useState("");
 // const [country, setCountry] = useState("");
-const [post, setPost] = useState("");
-const [poster, setPoster] = useState("");
+// const [post, setPost] = useState("");
+// const [poster, setPoster] = useState("");
 // const [bio, setbio] = useState("");
 // const [comment, setComment] = useState("");
 const [message, setMessage] = useState("");
-const{ token,isLoggedIn}  =useContext(newContext);
+// const{ token,isLoggedIn}  =useContext(newContext);
 const [selectedFile, setSelectedFile] = useState();
 const [isFilePicked, setIsFilePicked] = useState(false);
+// const [images, setImages] = useState(null);
+const [articles, setArticles] = useState([]);
+// const [articles, setArticles] = useState([]);
+const [post, setPost] = useState("");
+const [poster, setPoster] = useState("");
+ const [comment, setComment] = useState([]);
+ const [commenter, setCommenter] = useState("");
+const [updateInput, setUpdateInput] = useState(false);
+// const [message, setMessage] = useState("");
+const { token, isLoggedIn } = useContext(newContext);
+//   const [userId, setUserId] = useState("");
+//  const [updateArticles, setUpdateArticles] = useState(false);
+ const [articleId, setArticleId] = useState(false);
+ const[newComment,setnewComment]=useState([]);
+const [Newpost, setNewpost] = useState("");
+const [likes, setLikes] = useState(0);
+const [isClicked, setIsClicked] = useState(false);
+// const [selectedFile, setSelectedFile] = useState();
+// const [isFilePicked, setIsFilePicked] = useState(false);
+ const [user, setUser] = useState([]);
+// const [loading, setLoading] = useState(false);
+// const [search, setSearch] = useState('');
+const[IsLoggedIn,setIsLoggedIn]=useState(true);
+const [Token, setToken] = useState("");
 const [images, setImages] = useState(null);
 
 const newArticle=()=>{
@@ -32,12 +56,33 @@ const newArticle=()=>{
        setMessage(err.response.data.message);
      })
   };
- const getAllArticle=()=>{
-    axios.get("http://localhost:5000/articles/",
+  const getAllArticle = () => {
+    console.log("token : " + token);
+    axios.get("http://localhost:5000/articles/", {
+        headers: { Authorization: "Bearer " + token },
+      })
+      .then((response) => {
+        console.log(response.data.articles);
+        setArticles([...response.data.articles]);
+        console.log(articles);
+      })
+      .catch((err) => {
+        console.log(err.response.data);
+      });
+  };
+  const NewComment=()=>{
+    axios.post(`http://localhost:5000/articles/comments/`,{comment:comment,commenter:commenter},
     { headers:{'Authorization': 'Bearer '+token}})
-    
- };
- 
+    .then((response)=>{
+       console.log(response.data);
+      //  setMessage("The article has been created successfully");
+       console.log("The article has been created successfully");
+      
+     }).catch((err)=>{
+       console.log(err);
+      //  setMessage(err.response.data.message);
+     })
+  };
 //  const updateArticle = async (id) => {
 //     try {
 //       await axios.put(`http://localhost:5000/articles/${id}`, {
@@ -77,15 +122,95 @@ const getUser = () => {
     if(e.target.files&&e.target.files[0]){
       setImages(URL.createObjectURL(e.target.files[0]));
     }
-    // console.log(e.target.files);
-    // console.log(e.target.files[0]);
-    // setImages(e)
-    // console.log(e);
   }
+  const handleClick = () => {
+    if (isClicked) {
+      setLikes(likes - 1);
+      //setUserId(user._id);
+    } else {
+      setLikes(likes + 1);
+    
+    }
+    setIsClicked(!isClicked);
+   
+
+  };
+  
   //return  main function 
   return( 
   <div className="Article">
+  {articles &&
+        articles.map((elem, i) => {
+          return (
+            <div key={i} className="postPage">
+               
+              <p className="post">{elem.post}</p>
+              <input  className="file" type="file" onChange={handleFile}/>
+<img className="imgProfile" src={images}/>
+              <div className="buttonHome">
+              <button className="like" onClick={ handleClick }>
+      <span >{ `Like | ${likes}` }</span>
+      <p>{elem.like}</p>
+    </button>
+              <button className="DeletePost" id={elem._id} onClick={(e)=>{
+            axios.delete(`http://localhost:5000/articles/${e.target.id}`).then((res)=>{
+                console.log("delete");
+            }).catch((err)=>{
+                console.log(err);
+            })
+        }}>Delete</button>
 
+                <div className="UpdateMain">
+                <input className="postInput"onChange={(e) => {
+                  setNewpost(e.target.value);
+                }}
+                type="post"
+                placeholder="post"
+              />
+        <button className="UpdateButton" id={elem._id} onClick={(e)=>{
+           
+            axios.put(`http://localhost:5000/articles/${e.target.id}`,{post:Newpost})
+            .then((response)=>{
+                
+                console.log(response);
+                console.log("Update Done");
+            }).catch((err)=>{
+                console.log(err);
+            });
+        }}>Update</button>
+         </div>
+              </div>
+              <p className="comments">{elem.comment}</p>
+              
+              <div className="commentMain">
+              <input className="commentInput" type="text" 
+     placeholder="comment" onChange={(e)=>{setComment(e.target.value)}}/>
+      <button className="CommentButton" onClick={NewComment}>Add Comment</button>
+      
+              {/* <input className="commentInput"onChange={(e) => {
+                  setComment(e.target.value);
+                }}
+                type="comment"
+                placeholder="comment"
+              />
+
+                <button id={elem._id} onClick={(e)=>{
+            axios.post(`http://localhost:5000/articles/comments/`,
+            {Comment:comment})
+            .then((response)=>{
+                console.log("done");
+                console.log(response.data);
+            }).catch((err)=>{
+                console.log(err);
+        
+            })
+            
+        }}>Add comment</button> */}
+               
+              </div>
+            </div>
+          );
+        })}
     {user&&user.map((elem,i)=>{
     //return map function 
         return( 
@@ -104,10 +229,10 @@ const getUser = () => {
     })}
     
 
-<div>
+<div className="imgUpl">
 
 <input  className="file" type="file" onChange={handleFile}/>
-<img src={images}/>
+<img className="imgProfile" src={images}/>
 
   {/* {images.map((elem, index) => (
         <img key={index} src={elem.file.name} />
@@ -119,6 +244,9 @@ const getUser = () => {
      placeholder="post" onChange={(e)=>{setPost(e.target.value)}}/>
      
       <button className="articalButton" onClick={newArticle}>Create New Post</button>
+      <div class="footer">
+  <p>Done by Mohamed Asfour</p>
+</div>
       </div>
   )
 };

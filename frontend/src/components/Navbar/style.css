@@ -1,6 +1,9 @@
 .navbar{
 display: grid;
 background-color: rgb(6, 6, 98);
+ /* height:2000%; */
+/* width:max-content; */ 
+
 }
 .links{
  display: flex;

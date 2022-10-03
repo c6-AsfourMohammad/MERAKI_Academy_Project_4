@@ -1,10 +1,10 @@
 .Login{
     display: grid;
     justify-content: center;
-    margin-top: 5%;
+    margin-top: 4%;
     font-size: 400%;
     font-family: 'Courier New', Courier, monospace;
-    gap: 20%;
+    gap: 10%;
 
 }
 .Email{
@@ -42,3 +42,14 @@
     color: blue;
   
 }
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5%;
+    background-color: rgb(6, 6, 98);
+    color: white;
+    font-size: 30%;
+    text-align: center;
+ }

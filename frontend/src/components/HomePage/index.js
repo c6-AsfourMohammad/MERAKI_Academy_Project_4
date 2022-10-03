@@ -31,6 +31,8 @@ const HomePage = () => {
   // const [search, setSearch] = useState('');
   const[IsLoggedIn,setIsLoggedIn]=useState(true);
   const [Token, setToken] = useState("");
+const [images, setImages] = useState(null);
+
 //creat function getAllArticle
   const getAllArticle = () => {
     console.log("token : " + token);
@@ -116,11 +118,12 @@ const HomePage = () => {
      })
   };
 
-  const handleFile=(e)=>{
-    console.log(e.target.files);
-    console.log(e.target.files[0]);
-  }
   
+  const handleFile=(e)=>{
+    if(e.target.files&&e.target.files[0]){
+      setImages(URL.createObjectURL(e.target.files[0]));
+    }
+  }
   return (
     <div className="HomePage">
      <Link className="logOut" to="/Login" onClick={()=>{
@@ -136,7 +139,8 @@ localStorage.clear();
             <div key={i} className="postPage">
                
               <p className="post">{elem.post}</p>
-              
+              <input  className="file" type="file" onChange={handleFile}/>
+<img className="imgProfile" src={images}/>
               <div className="buttonHome">
               <button className="like" onClick={ handleClick }>
       <span >{ `Like | ${likes}` }</span>
@@ -204,6 +208,9 @@ localStorage.clear();
         <div>
 
         </div>
+        <div class="footer">
+  <p>Done by Mohamed Asfour</p>
+</div>
     </div>
   );
 };

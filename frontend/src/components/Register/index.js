@@ -89,8 +89,11 @@ console.log(result.data.message);
     {/* RegisterButton */}
 
     <button className="RegisterButton" onClick={AddNewUser}>Register</button>
-   
+    <div class="footer">
+  <p>Done by Mohamed Asfour</p>
+</div>
   </div>
+  
   ) ;
 };
 export default Register;

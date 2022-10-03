@@ -26,10 +26,13 @@ gap: 10%;
 .Age{
     font-size: 35%;  
 }
-.img{
-border-radius: 18px;
-width: 300%;
-height: 150%;
+.imgProfile{
+    display: flex;
+    margin-right: 50%;
+border-radius: 70px;
+width: 35%;
+height: 100%;
+box-shadow: 5px 5px 10px  rgb(6, 6, 98);
 }
 .firstName{
     margin-top: -10%;
@@ -45,5 +48,11 @@ height: 150%;
     font-size: 60%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 margin-top: 20%;
+
+}
+.file{
+    display: flex;
+    justify-content:center;
+    color:aliceblue;
 
 }
