@@ -4,9 +4,9 @@ const articlesModel = require("../models/articleSchema");
 
 
 const createNewComment = (req, res) =>{
-  const articleId = req.params.id;
+  const articleId = req.token._id;
   const { comment } = req.body;
-  const commenter = req.token;
+  const commenter = req.token.userId;
   const newComment= new commentsModel({comment,commenter})
 
 

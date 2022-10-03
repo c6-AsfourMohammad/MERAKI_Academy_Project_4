@@ -12,8 +12,8 @@ const HomePage = () => {
   const [articles, setArticles] = useState([]);
   const [post, setPost] = useState("");
   const [poster, setPoster] = useState("");
-  // const [comment, setComment] = useState([]);
-  // const [commenter, setCommenter] = useState("");
+   const [comment, setComment] = useState([]);
+   const [commenter, setCommenter] = useState("");
   const [updateInput, setUpdateInput] = useState(false);
   // const [message, setMessage] = useState("");
   const { token, isLoggedIn } = useContext(newContext);
@@ -102,11 +102,25 @@ const HomePage = () => {
    
 
   };
+  const NewComment=()=>{
+    axios.post(`http://localhost:5000/articles/comments/`,{comment:comment,commenter:commenter},
+    { headers:{'Authorization': 'Bearer '+token}})
+    .then((response)=>{
+       console.log(response.data);
+      //  setMessage("The article has been created successfully");
+       console.log("The article has been created successfully");
+      
+     }).catch((err)=>{
+       console.log(err);
+      //  setMessage(err.response.data.message);
+     })
+  };
 
   const handleFile=(e)=>{
     console.log(e.target.files);
     console.log(e.target.files[0]);
   }
+  
   return (
     <div className="HomePage">
      <Link to="/Login" onClick={()=>{
@@ -122,6 +136,7 @@ localStorage.clear();
             <div key={i} className="postPage">
                
               <p className="post">{elem.post}</p>
+              
               <div className="buttonHome">
               <button className="like"
               // className={ `like-button ${isClicked && 'liked'}` }
@@ -159,16 +174,20 @@ localStorage.clear();
               <p className="comment">{elem.comment}</p>
               
               <div className="commentMain">
-               
-              <input className="commentInput"onChange={(e) => {
-                  setnewComment(e.target.value);
+              <input className="commentInput" type="text" 
+     placeholder="comment" onChange={(e)=>{setComment(e.target.value)}}/>
+      <button className="CommentButton" onClick={NewComment}>Add Comment</button>
+      
+              {/* <input className="commentInput"onChange={(e) => {
+                  setComment(e.target.value);
                 }}
                 type="comment"
                 placeholder="comment"
               />
+
                 <button id={elem._id} onClick={(e)=>{
-            axios.post(`http://localhost:5000/articles/${e.target.id}/comments/`,
-            {Comment:[newComment]})
+            axios.post(`http://localhost:5000/articles/comments/`,
+            {Comment:comment})
             .then((response)=>{
                 console.log("done");
                 console.log(response.data);
@@ -177,7 +196,7 @@ localStorage.clear();
         
             })
             
-        }}>Add comment</button>
+        }}>Add comment</button> */}
                
               </div>
             </div>

@@ -24,7 +24,7 @@ articlesRouter.put("/:id", updateArticle);
 articlesRouter.delete("/:id", deleteArticle);
 
 
-articlesRouter.post("/:id/comments",authentication,authorization("CREATE_COMMENTS"),createNewComment);
+articlesRouter.post("/comments",authentication,authorization("CREATE_COMMENTS"),createNewComment);
 articlesRouter.post("/:id/comments",updateComment);
 articlesRouter.delete("/:id/comments",deleteComment);
 
