@@ -123,7 +123,7 @@ const HomePage = () => {
   
   return (
     <div className="HomePage">
-     <Link to="/Login" onClick={()=>{
+     <Link className="logOut" to="/Login" onClick={()=>{
 setIsLoggedIn(false)
 setToken("")
 localStorage.clear();
@@ -138,10 +138,9 @@ localStorage.clear();
               <p className="post">{elem.post}</p>
               
               <div className="buttonHome">
-              <button className="like"
-              // className={ `like-button ${isClicked && 'liked'}` }
-               onClick={ handleClick }>
-      <span >{ `Like | ${likes}` }</span>.
+              <button className="like" onClick={ handleClick }>
+      <span >{ `Like | ${likes}` }</span>
+      <p>{elem.like}</p>
     </button>
               <button className="DeletePost" id={elem._id} onClick={(e)=>{
             axios.delete(`http://localhost:5000/articles/${e.target.id}`).then((res)=>{
@@ -202,6 +201,9 @@ localStorage.clear();
             </div>
           );
         })}
+        <div>
+
+        </div>
     </div>
   );
 };

@@ -17,7 +17,7 @@ const [message, setMessage] = useState("");
 const{ token,isLoggedIn}  =useContext(newContext);
 const [selectedFile, setSelectedFile] = useState();
 const [isFilePicked, setIsFilePicked] = useState(false);
-const [images, setImages] = useState([]);
+const [images, setImages] = useState(null);
 
 const newArticle=()=>{
     axios.post("http://localhost:5000/articles/",{post:post,poster:poster},
@@ -74,10 +74,13 @@ const getUser = () => {
 
   //create function uploaded file
   const handleFile=(e)=>{
+    if(e.target.files&&e.target.files[0]){
+      setImages(URL.createObjectURL(e.target.files[0]));
+    }
     // console.log(e.target.files);
     // console.log(e.target.files[0]);
-    setImages(e)
-    console.log(e);
+    // setImages(e)
+    // console.log(e);
   }
   //return  main function 
   return( 
@@ -103,11 +106,9 @@ const getUser = () => {
 
 <div>
 
-<img  src={images} /> 
+<input  className="file" type="file" onChange={handleFile}/>
+<img src={images}/>
 
-<input  className="file" type="file" onChange={(e)=>{
-  console.log(e);
-handleFile(e.target.value)}}/>
   {/* {images.map((elem, index) => (
         <img key={index} src={elem.file.name} />
        
