@@ -29,12 +29,13 @@
    background-color: rgb(6, 6, 98);
  border-radius: 4px;
  color: aliceblue;
-
+ transition: 0.4s;
    
 }
 .LoginButton:hover{
  color:aliceblue ;
  font-size: 40%;
+ transition: 0.4s;
 
 }
 .popup{

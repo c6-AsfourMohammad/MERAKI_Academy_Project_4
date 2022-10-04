@@ -5,10 +5,12 @@ import { newContext } from "../../App";
 import { useState, useContext, useEffect } from "react";
 import {Link, useNavigate }from 'react-router-dom'
 
+
 //import { newContext } from "../../App";
 //import { Routes, Route, Link } from "react-router-dom";
 
 const HomePage = () => {
+  
   const history = useNavigate();
   const [articles, setArticles] = useState([]);
   const [post, setPost] = useState("");
@@ -33,6 +35,8 @@ const HomePage = () => {
   const[IsLoggedIn,setIsLoggedIn]=useState(true);
   const [Token, setToken] = useState("");
 const [images, setImages] = useState(null);
+
+
 //creat function getAllArticle
 
 const getAllArticle = () => {
@@ -158,14 +162,15 @@ const getAllArticle = () => {
   }
   return (
     <div className="HomePage">
+        
       <div className="suggestedfriends">
       <p className="friendsMAin">suggested friends:</p>
           {user.map((elem,i)=>{
             return(<div key={i} className="Friends"> 
-           
-               <p className="friends">{elem.firstName}</p>
+           <button className="butFriends"> <p className="friends">{elem.firstName}</p>
                <p className="friendscountry">Country:{elem.country}</p>
-               <p className="friendscountry">Age:{elem.age}</p>
+               <p className="friendscountry">Age:{elem.age}</p></button>
+              
 
                </div>)
           })}
@@ -237,7 +242,6 @@ localStorage.clear();
         })}
         
     
-
         <div class="footer">
   <p>Done by Mohamed Asfour</p>
 </div>

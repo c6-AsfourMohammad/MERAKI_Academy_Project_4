@@ -1,17 +1,17 @@
 import React, { useContext, useState,useEffect } from "react";
-
 import "./style.css";
 import axios from "axios";
 import { newContext } from "../../App";
-
  import Popup from 'reactjs-popup';
 import {GoogleLogin,GoogleLogout} from "react-google-login"
 import {Link, useNavigate }from 'react-router-dom'
-import { useGoogleLogin } from 'react-google-login'
+
+
 import ReactDOM from 'react-dom';
 
 
 const Login = () => {
+  
   const history = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -57,6 +57,9 @@ useEffect(() => {
 const responseGoogle = (response) => {
   console.log(response);
 }
+// const logout = (response) => {
+//   console.log(response);
+// }
 // const Failure=(result)=>{
 //   alert(result)
 // }
@@ -79,6 +82,14 @@ const responseGoogle = (response) => {
         cookiePolicy={'single_host_origin'}
         isSignedIn={true}
         />
+         {/* <GoogleLogout
+      clientId="667694760446-9ot0r7lbg6r8senhbff2112monoi00a6.apps.googleusercontent.com"
+    //  clientSecret="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"
+
+      buttonText="LogOut"
+     onLogoutSuccess={logout}
+    >
+    </GoogleLogout> */}
       
     
     <input className="Email" onChange={(e)=>{

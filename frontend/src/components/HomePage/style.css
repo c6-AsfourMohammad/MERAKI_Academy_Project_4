@@ -160,3 +160,7 @@ color: aliceblue;
     font-size: 100%;
     background-color: rgb(144, 150, 150);
 }
+.butFriends{
+    background-color: rgb(144, 150, 150);
+    border-radius: 8px;
+}
