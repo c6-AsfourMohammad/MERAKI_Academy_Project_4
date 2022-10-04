@@ -1,9 +1,16 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
 .navbar{
+    margin-top: 0%;
 display: grid;
 background-color: rgb(6, 6, 98);
  /* height:2000%; */
 /* width:max-content; */ 
-
+/* position: fixed; */
 }
 .links{
  display: flex;

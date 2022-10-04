@@ -1,10 +1,25 @@
 .HomePage{
-    margin-top: 10%;
-    gap: 70%;
-    border: px solid rgb(6, 6, 98);
-    background-color: rgb(6, 6, 98);
+    display: grid;
+    /* margin-top: 5%; */
+    /* gap: 70%; */
+    /* border: px solid rgb(6, 6, 98); */
+    justify-content: center;
+     /* background-color: rgb(147, 147, 153); 
+    */
 }
-
+.postPage{
+    display: grid;
+    /* justify-content: center; */
+ margin-top: 8%;
+   color: black;
+   background-color: lightgrey;
+  width: 100%;
+   border: 5px solid rgb(6, 6, 98);
+   border-radius: 8px;
+   padding: 20%;
+   /* margin: 20px; */
+    /* background-color: rgb(6, 6, 98); */
+}
 .commentMain{
     display: flex;
     justify-content: center;
@@ -41,23 +56,94 @@ color: aliceblue;
 .Like{
     font-size: 150%;
     font-family: 'Courier New', Courier, monospace;
-
+    background-color: rgb(6, 6, 98);
+    border: none;
 }
 .DeletePost{
     font-family: 'Courier New', Courier, monospace;
-    
+    background-color: rgb(6, 6, 98);
+color: aliceblue;
+border: none;
     font-size: 150%;
+}
+.DeletePost :hover{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(6, 6, 98);
+color: aliceblue;
+    
+    font-size: 160%;
 }
 .UpdateButton{
     font-family: 'Courier New', Courier, monospace;
-
+    background-color: rgb(6, 6, 98);
     font-size: 150%;
+color: aliceblue;
+border: none;
+}
+.UpdateButton :hover{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(6, 6, 98);
+    font-size: 160%;
+color: aliceblue;
+
 }
 .like{
     font-size: 100%;
-
+    background-color: rgb(6, 6, 98);
     font-family: 'Courier New', Courier, monospace;
+color: aliceblue;
+border: none;
+}
+.like:hover{
+    font-size: 110%;
+    background-color: rgb(6, 6, 98);
+    font-family: 'Courier New', Courier, monospace;
+color: aliceblue;
+
+
+}
+.out{
+    display: grid;
+    justify-content: end;
+   
 }
 .logOut{
-    color: aliceblue;
+    
+ 
+ color: rgb(10, 10, 10);
+}
+.suggestedfriends{
+    position: fixed;
+    display: grid;
+    justify-content: end;
+    color: black;
+    background-color: lightgrey;
+  width: 10%;
+  height: 50%;
+  border: 5px solid rgb(6, 6, 98);
+  border-radius: 8px;
+  padding: 1%;
+  /* margin: 0%; */
+
+}
+.friends{
+    color: black;
+   /* border:5px solid rgb(6, 6, 98);  */
+    background-color: rgb(144, 150, 150);
+    font-size: 170%;
+}
+.friendsMAin{
+    /* color:aliceblue; */
+   
+    /* background-color: rgb(6, 6, 98); */
+    font-size: 150%;
+}
+.Friends{
+    border:3px solid rgb(6, 6, 98); 
+  border-radius: 8px;
+
+}
+.friendscountry{
+    font-size: 100%;
+    background-color: rgb(144, 150, 150);
 }

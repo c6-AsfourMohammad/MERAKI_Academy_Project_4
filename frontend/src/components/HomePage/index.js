@@ -117,7 +117,23 @@ const [images, setImages] = useState(null);
       //  setMessage(err.response.data.message);
      })
   };
-
+  const getAllUser = () => {
+    // console.log("token : " + token);
+    axios.get("http://localhost:5000/users/", {
+        headers: { Authorization: "Bearer " + token },
+      })
+      .then((response) => {
+        console.log(response.data.user);
+        setUser([...response.data.user]);
+        console.log(user);
+      })
+      .catch((err) => {
+        console.log(err.response.data);
+      });
+  };
+  useEffect(() => {
+    getAllUser();
+  }, []);
   
   const handleFile=(e)=>{
     if(e.target.files&&e.target.files[0]){
@@ -126,11 +142,25 @@ const [images, setImages] = useState(null);
   }
   return (
     <div className="HomePage">
-     <Link className="logOut" to="/Login" onClick={()=>{
+      <div className="suggestedfriends">
+      <p className="friendsMAin">suggested friends:</p>
+          {user.map((elem,i)=>{
+            return(<div key={i} className="Friends"> 
+           
+               <p className="friends">{elem.firstName}</p>
+               <p className="friendscountry">Country:{elem.country}</p>
+               <p className="friendscountry">Age:{elem.age}</p>
+
+               </div>)
+          })}
+
+        </div>
+        <div className="out"> <Link className="logOut" to="/Login" onClick={()=>{
 setIsLoggedIn(false)
 setToken("")
 localStorage.clear();
-  }}>Log Out</Link>
+  }}>Log Out</Link></div>
+    
       
       {/* <h1>HomePage</h1> */}
       {articles &&
@@ -139,8 +169,8 @@ localStorage.clear();
             <div key={i} className="postPage">
                
               <p className="post">{elem.post}</p>
-              <input  className="file" type="file" onChange={handleFile}/>
-<img className="imgProfile" src={images}/>
+              {/* <input  className="file" type="file" onChange={handleFile}/>
+<img className="imgProfile" src={images}/> */}
               <div className="buttonHome">
               <button className="like" onClick={ handleClick }>
       <span >{ `Like | ${likes}` }</span>
@@ -205,9 +235,9 @@ localStorage.clear();
             </div>
           );
         })}
-        <div>
+        
+    
 
-        </div>
         <div class="footer">
   <p>Done by Mohamed Asfour</p>
 </div>
