@@ -6,7 +6,8 @@ const {createNewArticle,
     updateArticle,
      deleteArticle,
      getAllArticles,
-     getArticlesByPoster}=require("../controllers/article");
+     getArticlesByPoster,
+     getArticles}=require("../controllers/article");
 const { createNewComment,
     updateComment ,
     deleteComment} = require("./../controllers/comment");
@@ -19,6 +20,8 @@ const articlesRouter = express.Router();
 
 articlesRouter.post("/",authentication,authorization("CREATE_POST"), createNewArticle);
 articlesRouter.get("/",authentication, getAllArticles);
+articlesRouter.get("/ALL", getArticles);
+
 articlesRouter.get("/search", getArticlesByPoster);
 articlesRouter.put("/:id", updateArticle);
 articlesRouter.delete("/:id", deleteArticle);

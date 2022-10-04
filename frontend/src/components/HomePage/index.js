@@ -9,6 +9,7 @@ import {Link, useNavigate }from 'react-router-dom'
 //import { Routes, Route, Link } from "react-router-dom";
 
 const HomePage = () => {
+  const history = useNavigate();
   const [articles, setArticles] = useState([]);
   const [post, setPost] = useState("");
   const [poster, setPoster] = useState("");
@@ -33,8 +34,22 @@ const HomePage = () => {
   const [Token, setToken] = useState("");
 const [images, setImages] = useState(null);
 
+const getAllArticle = () => {
+  console.log("token : " + token);
+  axios.get("http://localhost:5000/articles/ALL", {
+      headers: { Authorization: "Bearer " + token },
+    })
+    .then((response) => {
+      console.log(response.data.articles);
+      setArticles([...response.data.articles]);
+      console.log(articles);
+    })
+    .catch((err) => {
+      console.log(err.response.data);
+    });
+};
 //creat function getAllArticle
-  const getAllArticle = () => {
+  const getArticle = () => {
     console.log("token : " + token);
     axios.get("http://localhost:5000/articles/", {
         headers: { Authorization: "Bearer " + token },
@@ -63,7 +78,7 @@ const [images, setImages] = useState(null);
         post:post,
         poster:poster
       });
-      getAllArticle();
+      getArticle();
     } catch (error) {
       console.log(error);
     }
@@ -78,7 +93,7 @@ const [images, setImages] = useState(null);
 //       }
 // };
   useEffect(() => {
-    getAllArticle();
+    getArticle();
   }, []);
 //   const createNewComment =  (id) => {
 //     try {
@@ -156,8 +171,10 @@ const [images, setImages] = useState(null);
 
         </div>
         <div className="out"> <Link className="logOut" to="/Login" onClick={()=>{
+          history("/Login")
 setIsLoggedIn(false)
 setToken("")
+
 localStorage.clear();
   }}>Log Out</Link></div>
     

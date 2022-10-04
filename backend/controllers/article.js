@@ -70,6 +70,21 @@ const getAllArticles = (req, res) => {
       });
     });
 };
+const getArticles = (req, res) => {
+  const userId = req.params.userId;
+  articlesModel.find({}) 
+  .then((articles) => {
+      if (articles.length) {
+        res.status(200).json({success: true,message: 'All the article',userId: userId,articles: articles,comments: articles.comments,like:articles.like });
+      } else {
+        res.status(200).json({ success: false,message:  'Articles', });
+      }
+    })
+    .catch((err) => {
+      res.status(500).json({success: false,message: 'Server Error',err: err.message,
+      });
+    });
+};
 //create getArticlesByPoster
 const getArticlesByPoster = (req, res) => {
   let posterId = req.query.poster;
@@ -98,4 +113,5 @@ module.exports={
   updateArticle,
   deleteArticle,
   getAllArticles,
-  getArticlesByPoster};
+  getArticlesByPoster,
+  getArticles};
