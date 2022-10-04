@@ -33,6 +33,7 @@ const HomePage = () => {
   const[IsLoggedIn,setIsLoggedIn]=useState(true);
   const [Token, setToken] = useState("");
 const [images, setImages] = useState(null);
+//creat function getAllArticle
 
 const getAllArticle = () => {
   console.log("token : " + token);
@@ -48,21 +49,21 @@ const getAllArticle = () => {
       console.log(err.response.data);
     });
 };
-//creat function getAllArticle
-  const getArticle = () => {
-    console.log("token : " + token);
-    axios.get("http://localhost:5000/articles/", {
-        headers: { Authorization: "Bearer " + token },
-      })
-      .then((response) => {
-        console.log(response.data.articles);
-        setArticles([...response.data.articles]);
-        console.log(articles);
-      })
-      .catch((err) => {
-        console.log(err.response.data);
-      });
-  };
+//creat function getArticle
+  // const getArticle = () => {
+  //   console.log("token : " + token);
+  //   axios.get("http://localhost:5000/articles/", {
+  //       headers: { Authorization: "Bearer " + token },
+  //     })
+  //     .then((response) => {
+  //       console.log(response.data.articles);
+  //       setArticles([...response.data.articles]);
+  //       console.log(articles);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err.response.data);
+  //     });
+  // };
   //create function handleUpdate 
   const handleUpdate = (articles) => {
     setUpdateInput(!updateInput);
@@ -78,7 +79,7 @@ const getAllArticle = () => {
         post:post,
         poster:poster
       });
-      getArticle();
+      getAllArticle();
     } catch (error) {
       console.log(error);
     }
@@ -93,7 +94,7 @@ const getAllArticle = () => {
 //       }
 // };
   useEffect(() => {
-    getArticle();
+    getAllArticle();
   }, []);
 //   const createNewComment =  (id) => {
 //     try {
@@ -193,15 +194,15 @@ localStorage.clear();
       <span >{ `Like | ${likes}` }</span>
       <p>{elem.like}</p>
     </button>
-              <button className="DeletePost" id={elem._id} onClick={(e)=>{
+              {/* <button className="DeletePost" id={elem._id} onClick={(e)=>{
             axios.delete(`http://localhost:5000/articles/${e.target.id}`).then((res)=>{
                 console.log("delete");
             }).catch((err)=>{
                 console.log(err);
             })
-        }}>Delete</button>
+        }}>Delete</button> */}
 
-                <div className="UpdateMain">
+                {/* <div className="UpdateMain">
                 <input className="postInput"onChange={(e) => {
                   setNewpost(e.target.value);
                 }}
@@ -219,34 +220,16 @@ localStorage.clear();
                 console.log(err);
             });
         }}>Update</button>
-         </div>
+         </div> */}
               </div>
               <p className="comments">{elem.comment}</p>
+              {/* <p className="comments">{elem.user}</p> */}
+
               
               <div className="commentMain">
               <input className="commentInput" type="text" 
      placeholder="comment" onChange={(e)=>{setComment(e.target.value)}}/>
       <button className="CommentButton" onClick={NewComment}>Add Comment</button>
-      
-              {/* <input className="commentInput"onChange={(e) => {
-                  setComment(e.target.value);
-                }}
-                type="comment"
-                placeholder="comment"
-              />
-
-                <button id={elem._id} onClick={(e)=>{
-            axios.post(`http://localhost:5000/articles/comments/`,
-            {Comment:comment})
-            .then((response)=>{
-                console.log("done");
-                console.log(response.data);
-            }).catch((err)=>{
-                console.log(err);
-        
-            })
-            
-        }}>Add comment</button> */}
                
               </div>
             </div>

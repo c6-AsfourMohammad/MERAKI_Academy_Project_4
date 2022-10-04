@@ -1,7 +1,7 @@
 .HomePage{
     display: grid;
     /* margin-top: 5%; */
-    /* gap: 70%; */
+    gap: 6%;
     /* border: px solid rgb(6, 6, 98); */
     justify-content: center;
      /* background-color: rgb(147, 147, 153); 
@@ -9,12 +9,15 @@
 }
 .postPage{
     display: grid;
+   
     /* justify-content: center; */
  margin-top: 8%;
    color: black;
    background-color: lightgrey;
-  width: 100%;
+  width: 200%;
+  height: 150%;
    border: 5px solid rgb(6, 6, 98);
+   
    border-radius: 8px;
    padding: 20%;
    /* margin: 20px; */
@@ -23,6 +26,7 @@
 .commentMain{
     display: flex;
     justify-content: center;
+   
     /* gap: 10%; */
     
 }
@@ -33,11 +37,12 @@
  
 }
 .post{
-    font-size: 250%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 300%;
     border: 1px solid rgb(98, 97, 101);
     border-top:1px solid rgb(98, 97, 101);
     border-bottom: 0px solid rgb(98, 97, 101);
-color: aliceblue;
+color: rgb(4, 4, 4);
   /* border-radius: 50px 50px; */
  
 
@@ -50,15 +55,16 @@ color: aliceblue;
 .buttonHome{
     display: flex;
     justify-content: center;
-    gap: 1%;
+    /* gap: 1%; */
 
 }
-.Like{
+/* .Like{
     font-size: 150%;
+    
     font-family: 'Courier New', Courier, monospace;
     background-color: rgb(6, 6, 98);
     border: none;
-}
+} */
 .DeletePost{
     font-family: 'Courier New', Courier, monospace;
     background-color: rgb(6, 6, 98);
@@ -88,7 +94,8 @@ color: aliceblue;
 
 }
 .like{
-    font-size: 100%;
+    font-size: 120%;
+    width: 30%;
     background-color: rgb(6, 6, 98);
     font-family: 'Courier New', Courier, monospace;
 color: aliceblue;
@@ -99,6 +106,7 @@ border: none;
     background-color: rgb(6, 6, 98);
     font-family: 'Courier New', Courier, monospace;
 color: aliceblue;
+
 
 
 }
@@ -118,8 +126,8 @@ color: aliceblue;
     justify-content: end;
     color: black;
     background-color: lightgrey;
-  width: 10%;
-  height: 50%;
+  width: 12%;
+  height: 70%;
   border: 5px solid rgb(6, 6, 98);
   border-radius: 8px;
   padding: 1%;
@@ -127,6 +135,8 @@ color: aliceblue;
 
 }
 .friends{
+   
+    
     color: black;
    /* border:5px solid rgb(6, 6, 98);  */
     background-color: rgb(144, 150, 150);
@@ -134,11 +144,14 @@ color: aliceblue;
 }
 .friendsMAin{
     /* color:aliceblue; */
-   
+   display: grid;
+   justify-content: center;
     /* background-color: rgb(6, 6, 98); */
     font-size: 150%;
 }
 .Friends{
+ 
+  
     border:3px solid rgb(6, 6, 98); 
   border-radius: 8px;
 
