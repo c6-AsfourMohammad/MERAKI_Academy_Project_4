@@ -85,12 +85,13 @@ const logoutHandler = () => {
 
   return <div className="Login"> 
   
-    <div className="LoginName">Login</div>
-    <img className="imglogin" src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUyupe95d5oSN4BN-Ykga44hOxgqkVojz1Bgetfbw213GD1tRIULI7Ez6G2iKcFZV7f7w&usqp=CAU"} />
+   
+    <div className="imglogin">
+    <img className="II" src={"./Hello-rafiki.png"} /></div>
     {/* Email */}
-    <div>
+    <div className="Loginhi">
       {/* create login with Google */}
-    </div>
+      <div className="LoginName">Login</div>
     <GoogleLogin
     className="Google"
     clientId="994328639474-ub85dkgodp4vrm5nvfaemiklfko5jpt9.apps.googleusercontent.com"
@@ -131,13 +132,14 @@ const logoutHandler = () => {
     </div>
     {/* logButton */}
       <button className="LoginButton" onClick={loginUser}>Login </button>
-     
+      </div>
        {/* <Popup className="popup" trigger={ <button className="LoginButton" onClick={loginUser}>Login</button>} position="right center">
     <div>welcome again</div>
   </Popup>  */}
   <div class="footer">
   <p className="footerName">Done by Mohamed Asfour</p>
 </div>
+
     </div>;
 };
 export default Login;

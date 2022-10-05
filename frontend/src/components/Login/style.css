@@ -1,11 +1,26 @@
 .Login{
-    display: grid;
-    justify-content: center;
-    margin-top: 3%;
-    font-size: 400%;
-    font-family: 'Courier New', Courier, monospace;
-    gap: 10%;
+  display: flex;
+  justify-content: end;
+  /* margin-top: 1%; */
+  font-size: 400%;
+  /* margin-right: 20%; */
+  font-family: 'Courier New', Courier, monospace;
+  /* gap: 10%; */
+    margin-top: 5%;
+    /* font-size: 400%; */
+    /* font-family: 'Courier New', Courier, monospace;
+    gap: 10%; 
     /* text-shadow: 2px 2px 2px #888888; */
+}
+.Loginhi{
+  display: grid;
+  justify-content: end;
+  margin-top: 1%;
+  font-size: 120%;
+  margin-right: 22%;
+width: 90%;
+  font-family: 'Courier New', Courier, monospace;
+  gap: 6%;
 }
 .LoginName
 {
@@ -63,7 +78,7 @@
 .LoginButton{
     font-family: 'Courier New', Courier, monospace;
     font-size: 30%;
-    height: 150%;
+    height: 50%;
    background-color: #134074;
  border-radius: 4px;
  color: aliceblue;
@@ -159,9 +174,16 @@
 }
 
  .imglogin{
-  height: 119%;
- }
- 
+  display: flex;
+ justify-content:start ;
+ margin-left: 5%;
+
+
+}
+.II{
+  height: 100%;
+  width: 100%;
+} 
  .formE {
   font-size: 50%;
   width: 100%;
