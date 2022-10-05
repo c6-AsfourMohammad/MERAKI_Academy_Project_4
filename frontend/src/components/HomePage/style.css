@@ -1,6 +1,6 @@
 .HomePage{
     display: grid;
-    /* margin-top: 5%; */
+    /* margin-top: -3%; */
     gap: 6%;
     /* border: px solid rgb(6, 6, 98); */
     justify-content: center;
@@ -9,19 +9,24 @@
 }
 .postPage{
     display: grid;
+    box-shadow: 0 8px 16px 0 #134074, 0 6px 20px 0 #134074;
    
     /* justify-content: center; */
- margin-top: 8%;
+ /* margin-top: 0%; */
    color: black;
-   background-color: lightgrey;
+   background-color: #8D98A7;
   width: 200%;
   height: 150%;
-   border: 5px solid rgb(6, 6, 98);
+   border: 5px solid #134074;
    
    border-radius: 8px;
    padding: 20%;
    /* margin: 20px; */
     /* background-color: rgb(6, 6, 98); */
+}
+.postPage:hover{
+    box-shadow: 0 10px 20px 0 #134074, 0 10px 30px 0 #134074;
+
 }
 .commentMain{
     display: flex;
@@ -33,15 +38,30 @@
 .comments{
     display:grid;
    font-size: 120%;
-    background-color: rgb(186, 195, 195);
+    background-color: #ABA9BF;
  
+}
+.CommentButton{
+    position: relative;
+    background-color: #134074;
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 20px;
+    /* width: 30%;
+    height: 50%; */
+    text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
 }
 .post{
     font-family: 'Times New Roman', Times, serif;
     font-size: 300%;
-    border: 1px solid rgb(98, 97, 101);
-    border-top:1px solid rgb(98, 97, 101);
-    border-bottom: 0px solid rgb(98, 97, 101);
+    border: 1px solid #8D98A7;
+    border-top:1px solid #8D98A7;
+    border-bottom: 0px solid #8D98A7;
 color: rgb(4, 4, 4);
   /* border-radius: 50px 50px; */
  
@@ -67,49 +87,82 @@ color: rgb(4, 4, 4);
 } */
 .DeletePost{
     font-family: 'Courier New', Courier, monospace;
-    background-color: rgb(6, 6, 98);
+    background-color: #134074;
 color: aliceblue;
 border: none;
     font-size: 150%;
 }
 .DeletePost :hover{
     font-family: 'Courier New', Courier, monospace;
-    background-color: rgb(6, 6, 98);
+    background-color: #134074;
 color: aliceblue;
     
     font-size: 160%;
 }
 .UpdateButton{
     font-family: 'Courier New', Courier, monospace;
-    background-color: rgb(6, 6, 98);
+    background-color: #134074;
     font-size: 150%;
 color: aliceblue;
 border: none;
 }
 .UpdateButton :hover{
     font-family: 'Courier New', Courier, monospace;
-    background-color: rgb(6, 6, 98);
+    background-color: #134074;
     font-size: 160%;
 color: aliceblue;
 
 }
-.like{
+.like {
+    position: relative;
+    background-color: #134074;
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 30%;
+    height: 50%;
+    text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .like:after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+  }
+  .like:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
+/* .like{
     font-size: 120%;
     width: 30%;
-    background-color: rgb(6, 6, 98);
+    background-color: #134074;
     font-family: 'Courier New', Courier, monospace;
 color: aliceblue;
 border: none;
 }
 .like:hover{
     font-size: 110%;
-    background-color: rgb(6, 6, 98);
+    background-color: #134074;
     font-family: 'Courier New', Courier, monospace;
 color: aliceblue;
 
 
 
-}
+} */
 .out{
     display: grid;
     justify-content: end;
@@ -125,12 +178,14 @@ color: aliceblue;
     display: grid;
     justify-content: end;
     color: black;
-    background-color: lightgrey;
+    background-color: #8D98A7;
   width: 12%;
   height: 70%;
-  border: 5px solid rgb(6, 6, 98);
+  border: 3px solid #134074;
   border-radius: 8px;
   padding: 1%;
+  box-shadow: 0 8px 16px 0 #134074, 0 6px 20px 0 #134074;
+
   /* margin: 0%; */
 
 }
@@ -139,7 +194,7 @@ color: aliceblue;
     
     color: black;
    /* border:5px solid rgb(6, 6, 98);  */
-    background-color: rgb(144, 150, 150);
+    background-color: #8D98A7;
     font-size: 170%;
 }
 .friendsMAin{
@@ -152,15 +207,23 @@ color: aliceblue;
 .Friends{
  
   
-    border:3px solid rgb(6, 6, 98); 
+    border:0px solid #134074; 
   border-radius: 8px;
+  box-shadow: 0 8px 16px 0 #ced0d2, 0 6px 20px 0 #ced0d2;
 
 }
 .friendscountry{
     font-size: 100%;
-    background-color: rgb(144, 150, 150);
+    /* background-color: #8D98A7; */
 }
 .butFriends{
-    background-color: rgb(144, 150, 150);
+    /* background-color: #8D98A7; */
     border-radius: 8px;
+    height: 100%;
+    width: 100%;
+
+}
+.butFriends:hover{
+    box-shadow: 0 8px 16px 0 #134074, 0 6px 20px 0 #134074;
+    transition-duration: 0.8s;
 }

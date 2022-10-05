@@ -4,7 +4,8 @@ import "./style.css";
 import { newContext } from "../../App";
 import { useState, useContext, useEffect } from "react";
 import {Link, useNavigate }from 'react-router-dom'
-
+import {Image, Video, Transformation} from 'cloudinary-react';
+import { GoogleLogout } from 'react-google-login';
 
 //import { newContext } from "../../App";
 //import { Routes, Route, Link } from "react-router-dom";
@@ -35,7 +36,7 @@ const HomePage = () => {
   const[IsLoggedIn,setIsLoggedIn]=useState(true);
   const [Token, setToken] = useState("");
 const [images, setImages] = useState(null);
-
+const [ profile, setProfile ] = useState([]);
 
 //creat function getAllArticle
 
@@ -160,9 +161,22 @@ const getAllArticle = () => {
       setImages(URL.createObjectURL(e.target.files[0]));
     }
   }
+  const logoutHandler = () => {
+    console.log('successfully logged out!');
+    setProfile(null);
+    console.log(profile);
+history("/")
+
+    // setIsSignedIn(false);
+    // console.log(GoogleLogout);
+  
+  }
   return (
     <div className="HomePage">
-        
+      <input  className="file" type="file" onChange={handleFile}/>
+         <Image cloudName="demo" publicId="">
+   <Transformation crop="scale" width="200" angle="10" />
+ </Image>
       <div className="suggestedfriends">
       <p className="friendsMAin">suggested friends:</p>
           {user.map((elem,i)=>{
@@ -176,6 +190,12 @@ const getAllArticle = () => {
           })}
 
         </div>
+        <GoogleLogout
+      clientId="994328639474-ub85dkgodp4vrm5nvfaemiklfko5jpt9.apps.googleusercontent.com"
+      buttonText="Logout"
+       onLogoutSuccess={logoutHandler}
+    >
+    </GoogleLogout>
         <div className="out"> <Link className="logOut" to="/Login" onClick={()=>{
           history("/Login")
 setIsLoggedIn(false)
@@ -190,8 +210,14 @@ localStorage.clear();
         articles.map((elem, i) => {
           return (
             <div key={i} className="postPage">
-               
+              
               <p className="post">{elem.post}</p>
+              <p className="post">{elem.comment}</p>
+             
+              
+              {/* <p className="post">{elem.commenter}</p> */}
+
+
               {/* <input  className="file" type="file" onChange={handleFile}/>
 <img className="imgProfile" src={images}/> */}
               <div className="buttonHome">

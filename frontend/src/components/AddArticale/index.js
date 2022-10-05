@@ -4,6 +4,8 @@ import "./style.css";
 import axios from "axios";
 import { newContext } from "../../App";
 import ImageUploading from 'react-images-uploading';
+import {Image, Video, Transformation} from 'cloudinary-react';
+
 const AddArticle=()=>{
 // const [user, setUser] = useState([]);
 // const [userId, setUserId] = useState("");
@@ -162,9 +164,11 @@ const getUser = () => {
     
   <div className="Article">
     <div className="imgUpl">
-
+    <Image cloudName="imgProfile" publicId={images} src={images}>
+   <Transformation crop="scale" width="200" angle="10" />
+ </Image>
 <input  className="file" type="file" onChange={handleFile}/>
-<img className="imgProfile" src={images}/>
+ {/* <img className="imgProfile" src={images}/>  */}
 
   {/* {images.map((elem, index) => (
         <img key={index} src={elem.file.name} />

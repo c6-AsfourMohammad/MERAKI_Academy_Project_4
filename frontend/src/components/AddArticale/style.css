@@ -20,7 +20,7 @@
     justify-content:right;
     font-size: 400%;
     /* background-color: rgb(6, 6, 98); */
-color: rgb(6, 6, 98);
+color: #134074;
 gap: 10%;
 }
 .Age{
@@ -32,7 +32,7 @@ gap: 10%;
 border-radius: 70px;
 width: 35%;
 height: 100%;
-box-shadow: 5px 5px 10px  rgb(6, 6, 98);
+box-shadow: 5px 5px 10px  #134074;
 }
 .firstName{
     margin-top: -10%;
@@ -55,4 +55,17 @@ margin-top: 20%;
     justify-content:center;
     color:aliceblue;
 
+}
+.articalButton{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 100%;
+    /* height: 150%; */
+   background-color: #134074;
+ border-radius: 4px;
+ color: aliceblue;
+}
+.articalButton:hover{
+   
+    font-size: 110%;
+    transition: 0.4s;
 }
