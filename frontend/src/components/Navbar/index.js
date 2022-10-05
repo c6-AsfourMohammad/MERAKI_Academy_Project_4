@@ -5,7 +5,9 @@ const Navigate=()=>{
 const Navigate=useNavigate();
 return(
 <div className="navbar">
+    
     <div className="links">
+<p className="Tiwtter"> Tiwtter</p>
 
     <Link className="li" to='/'>Login</Link>
     <Link  className="li" to='/Register'>Register</Link>

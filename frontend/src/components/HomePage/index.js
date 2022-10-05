@@ -173,6 +173,7 @@ history("/")
   }
   return (
     <div className="HomePage">
+      
       <input  className="file" type="file" onChange={handleFile}/>
          <Image cloudName="demo" publicId="">
    <Transformation crop="scale" width="200" angle="10" />

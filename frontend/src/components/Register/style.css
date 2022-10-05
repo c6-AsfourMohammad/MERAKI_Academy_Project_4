@@ -7,22 +7,59 @@
     gap: 4%;
 
 }
+
 .RegisterButton{
     font-family: 'Courier New', Courier, monospace;
     font-size: 30%;
-    height: 150%;
-   background-color: rgb(6, 6, 98);
+    height: 140%;
+   background-color: #134074;
  border-radius: 4px;
  color: aliceblue;
- margin-top: -2%;
-
+ position: relative;
+ background-color: #134074;
+ border: none;
+ font-size: 28px;
+ /* color: #FFFFFF; */
+ padding: 20px;
+ /* width: 30%;
+ height: 50%; */
+ text-align: center;
+ transition-duration: 0.4s;
+ text-decoration: none;
+ overflow: hidden;
+ cursor: pointer;
+ /* transition: 0.4s; */
    
 }
 .RegisterButton:hover{
  color:aliceblue ;
  font-size: 40%;
+ transition: 0.4s;
 
 }
+.RegisterButton:after {
+    content: "";
+    background: aliceblue;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 1s
+  }
+  .RegisterButton:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
+  .name{
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+  }
 .firstNameR{
     font-family: 'Courier New', Courier, monospace;
     font-size: 30%;
@@ -53,13 +90,14 @@
     font-size: 30%;
     height: 150%;
 }
-.password{
+.passwordR{
     font-family: 'Courier New', Courier, monospace;
     font-size: 30%;
     height: 150%;
 }
 .imgR{
-
+display: grid;
+justify-content: center;
 height: 255px;
 width: 255px;
 }

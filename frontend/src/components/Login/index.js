@@ -86,7 +86,7 @@ const logoutHandler = () => {
   return <div className="Login"> 
   
     <div className="LoginName">Login</div>
-    <img src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUyupe95d5oSN4BN-Ykga44hOxgqkVojz1Bgetfbw213GD1tRIULI7Ez6G2iKcFZV7f7w&usqp=CAU"} />
+    <img className="imglogin" src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUyupe95d5oSN4BN-Ykga44hOxgqkVojz1Bgetfbw213GD1tRIULI7Ez6G2iKcFZV7f7w&usqp=CAU"} />
     {/* Email */}
     <div>
       {/* create login with Google */}
@@ -108,14 +108,27 @@ const logoutHandler = () => {
        onLogoutSuccess={logoutHandler}
     >
     </GoogleLogout> */}
-    
+    <div className="formE">
     <input className="Email" onChange={(e)=>{
         setEmail(e.target.value)
-    }} type="email" placeholder="Email"/>
+    }} type="email"  autocomplete="off" required/>
+     <label for="Email" class="label-name">
+    <span class="content-name">
+    Email
+    </span>
+  </label>
+  </div>
 {/* password */}
+<div className="formP">
      <input  className="password" onChange={(e)=>{
         setPassword(e.target.value)
-    }} type="password" placeholder="Password"/>
+    }} type="password" autocomplete="off" required/>
+     <label for="password" class="label-name">
+    <span class="content-name">
+    password
+    </span>
+  </label>
+    </div>
     {/* logButton */}
       <button className="LoginButton" onClick={loginUser}>Login </button>
      
@@ -123,7 +136,7 @@ const logoutHandler = () => {
     <div>welcome again</div>
   </Popup>  */}
   <div class="footer">
-  <p>Done by Mohamed Asfour</p>
+  <p className="footerName">Done by Mohamed Asfour</p>
 </div>
     </div>;
 };

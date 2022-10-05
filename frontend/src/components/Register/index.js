@@ -52,13 +52,18 @@ console.log(result.data.message);
     <img className="imgR" src={"https://static.vecteezy.com/system/resources/previews/003/689/224/non_2x/online-registration-or-sign-up-login-for-account-on-smartphone-app-user-interface-with-secure-password-mobile-application-for-ui-web-banner-access-cartoon-people-illustration-vector.jpg"} />
 
     {/* firstName */}
+    <div className="name">
+     
     <input className="firstNameR"
      onChange={(e)=>{setFirstName(e.target.value);}}
         type="text" placeholder="First Name"/>
+          {/* <label>First Name</label> */}
+       
     {/* lastName */}
     <input  className="lastName" 
      onChange={(e)=>{setLastName(e.target.value);}}
      type="text" placeholder="Last Name"/>
+     </div>
     {/* age */}
     <input  className="age" 
      onChange={(e)=>{setAge(e.target.value);}}
@@ -80,7 +85,7 @@ console.log(result.data.message);
      onChange={(e)=>{setEmail(e.target.value);}} 
      type="email" placeholder="Email"/>
     {/* password */}
-    <input  className="password"
+    <input  className="passwordR"
      onChange={(e)=>{setPassword(e.target.value);}} 
   type="password" placeholder="Password"/>
     
