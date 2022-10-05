@@ -270,7 +270,7 @@ localStorage.clear();
         
     
         <div class="footer">
-  <p>Done by Mohamed Asfour</p>
+  <p className="footerName">Done by Mohamed Asfour</p>
 </div>
     </div>
   );

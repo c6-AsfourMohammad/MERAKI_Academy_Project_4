@@ -47,11 +47,28 @@ console.log(result.data.message);
 
 
 
-  return( <div className="Register">
-    <div className="NameRegister">Register</div>
-    <img className="imgR" src={"https://static.vecteezy.com/system/resources/previews/003/689/224/non_2x/online-registration-or-sign-up-login-for-account-on-smartphone-app-user-interface-with-secure-password-mobile-application-for-ui-web-banner-access-cartoon-people-illustration-vector.jpg"} />
+  return( 
+  <div className="Register">
+   
+    <div className="IMG">
+      <img className="ii" src={"./Sign up-rafiki (1).png" }/>
+    </div>
+     
+   
+    {/* <img className="imgR" src={"https://static.vecteezy.com/system/resources/previews/003/689/224/non_2x/online-registration-or-sign-up-login-for-account-on-smartphone-app-user-interface-with-secure-password-mobile-application-for-ui-web-banner-access-cartoon-people-illustration-vector.jpg"} /> */}
 
     {/* firstName */}
+    <div className="hi">
+    <div class="waviy">
+   <span >R</span>
+   <span >e</span>
+   <span >g</span>
+   <span >i</span>
+   <span >s</span>
+   <span >t</span>
+   <span >e</span>
+   <span >r</span>
+  </div>
     <div className="name">
      
     <input className="firstNameR"
@@ -60,16 +77,16 @@ console.log(result.data.message);
           {/* <label>First Name</label> */}
        
     {/* lastName */}
-    <input  className="lastName" 
+    <input  className="lastNameR" 
      onChange={(e)=>{setLastName(e.target.value);}}
      type="text" placeholder="Last Name"/>
      </div>
     {/* age */}
-    <input  className="age" 
+    <input  className="ageR" 
      onChange={(e)=>{setAge(e.target.value);}}
         type="number" placeholder="Age"/>
     {/* country */}
-    <input  className="country"
+    <input  className="countryR"
     onChange={(e)=>{setCountry(e.target.value);}}
     type="text" placeholder="Country"/>
     {/* bio */}
@@ -81,7 +98,7 @@ console.log(result.data.message);
      onChange={(e)=>{setImgProfile(e.target.value);}}
      type="text" placeholder="imgProfile"/> */}
     {/* email */}
-    <input  className="email"
+    <input  className="emailR"
      onChange={(e)=>{setEmail(e.target.value);}} 
      type="email" placeholder="Email"/>
     {/* password */}
@@ -89,14 +106,16 @@ console.log(result.data.message);
      onChange={(e)=>{setPassword(e.target.value);}} 
   type="password" placeholder="Password"/>
     
+    <div class="footer">
+  <p className="footerName">Done by Mohamed Asfour</p>
+</div>
+  
 
-    <br />
     {/* RegisterButton */}
 
     <button className="RegisterButton" onClick={AddNewUser}>Register</button>
-    <div class="footer">
-  <p>Done by Mohamed Asfour</p>
-</div>
+    </div>
+  
   </div>
   
   ) ;
