@@ -187,6 +187,8 @@ const getUser = () => {
             <p className="bio"><br/>Bio: {elem.bio}</p>
             <p className="country"><br/>Country:{elem.country}</p>
             <p className="Age"><br/>Age:{elem.age}</p>
+            <p className="Age"><br/>{elem.imgProfile}</p>
+
             {/* <img className="img" src={`${elem.files}`}/> */}
             
 

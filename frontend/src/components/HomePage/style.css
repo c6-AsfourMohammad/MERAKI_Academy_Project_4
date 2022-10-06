@@ -24,8 +24,8 @@
  /* margin-top: 0%; */
    color: black;
    background-color: #8D98A7;
-  width: 200%;
-  height: 150%;
+  width: 150%;
+  height: 110%;
    border: 5px solid #134074;
    margin-top: -20%;
    border-radius: 8px;
@@ -37,6 +37,18 @@
     box-shadow: 0 10px 20px 0 #134074, 0 10px 30px 0 #134074;
 
 }
+.buttonHome{
+  
+  
+  display: flex;
+  
+  gap: 10%;
+}
+.imgPost{
+  
+  border-radius: 4px;
+  /* height: 70%; */
+}
 .commentMain{
     display: flex;
     justify-content: center;
@@ -44,19 +56,28 @@
     /* gap: 10%; */
     
 }
+.commentInput{
+  border-radius: 8px;
+  height: 60%;
+  width: 90%;
+}
 .comments{
     display:grid;
    font-size: 120%;
-    background-color: #ABA9BF;
+    /* background-color: #ABA9BF; */
+    color: #134074;
  
 }
 .CommentButton{
     position: relative;
     background-color: #134074;
     border: none;
-    font-size: 28px;
+    font-size: 90%;
+    height: 60%;
+    
     color: #FFFFFF;
     padding: 20px;
+    border-radius: 8px;
     /* width: 30%;
     height: 50%; */
     text-align: center;
@@ -67,7 +88,7 @@
 }
 .post{
     font-family: 'Times New Roman', Times, serif;
-    font-size: 300%;
+    font-size: 1vw;
     border: 1px solid #8D98A7;
     border-top:1px solid #8D98A7;
     border-bottom: 0px solid #8D98A7;
@@ -84,6 +105,7 @@ color: rgb(4, 4, 4);
 .buttonHome{
     display: flex;
     justify-content: center;
+    margin-top: 10%;
     /* gap: 1%; */
 
 }
@@ -126,17 +148,17 @@ color: aliceblue;
     position: relative;
     background-color: #134074;
     border: none;
-    font-size: 28px;
+    font-size: 100%;
     color: #FFFFFF;
     padding: 20px;
     width: 30%;
-    height: 50%;
+    height: 60%;
     text-align: center;
     transition-duration: 0.4s;
     text-decoration: none;
     overflow: hidden;
     cursor: pointer;
-    
+    border-radius: 8px;
   }
   .like:after {
     content: "";
@@ -188,12 +210,13 @@ color: aliceblue;
 } */
 .suggestedfriends{
     position: fixed;
+    
     display: grid;
     justify-content: end;
     color: black;
     background-color: #8D98A7;
   width: 10%;
-  height: 70%;
+  height: 100%;
   border: 3px solid #134074;
   border-radius: 8px;
   padding: 1%;
@@ -359,4 +382,9 @@ color: aliceblue;
     align-self: end;
     justify-self: center;
     padding-bottom: 1rem;
+  }
+  .imgSugg{
+    width: 50%;
+    height: 40%;
+    border-radius: 50%;
   }

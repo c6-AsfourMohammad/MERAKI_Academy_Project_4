@@ -203,7 +203,9 @@ history("/")
       <p className="friendsMAin">suggested friends:</p>
           {user.map((elem,i)=>{
             return(<div key={i} className="Friends"> 
+           
            <button className="butFriends"> <p className="friends">{elem.firstName}</p>
+           <img className="imgSugg" src={elem.imgProfile}/>
                <p className="friendscountry">Country:{elem.country}</p>
                <p className="friendscountry">Age:{elem.age}</p>
                </button>
@@ -224,6 +226,7 @@ history("/")
             <div key={i} className="postPage">
               
               <p className="post">{elem.post}</p>
+              <img className="imgPost" src={elem.imgPost}/>
               <p className="post">{elem.comment}</p>
              
               
@@ -232,6 +235,7 @@ history("/")
 
               {/* <input  className="file" type="file" onChange={handleFile}/>
 <img className="imgProfile" src={images}/> */}
+
               <div className="buttonHome">
               <button className="like" onClick={ handleClick }>
       <span >{ `Like | ${likes}` }</span>
@@ -264,7 +268,7 @@ history("/")
             });
         }}>Update</button>
          </div> */}
-              </div>
+              
               <p className="comments">{elem.comment}</p>
               {/* <p className="comments">{elem.user}</p> */}
 
@@ -273,7 +277,7 @@ history("/")
               <input className="commentInput" type="text" 
      placeholder="comment" onChange={(e)=>{setComment(e.target.value)}}/>
       <button className="CommentButton" onClick={NewComment}>Add Comment</button>
-               
+      </div>
               </div>
             </div>
           );

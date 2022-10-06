@@ -3,9 +3,9 @@ const articlesModel = require("../models/articleSchema");
 
 //create function CreatNewArtical
 const createNewArticle=(req,res)=>{
-const {post}=req.body;
+const {post,imgPost}=req.body;
 const poster=req.token.userId;
-const newArticle= new articlesModel({post,poster});
+const newArticle= new articlesModel({post,imgPost,poster});
 newArticle.save()
 .then((result) => {
   res.status(201).json({success: true,message: 'Article created',article: result});
