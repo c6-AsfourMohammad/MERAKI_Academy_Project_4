@@ -7,7 +7,7 @@
 
 ---
 
-<p align="center"> An awesome Project to descripe README 
+<p align="center"> Effective Social Communication
     <br> 
 <a href='http://localhost:3000/'>Demo</a>
     <br> 
@@ -45,7 +45,7 @@ These instructions will get you a copy of the project up and running on your loc
 1. Clone the repo to your local machine using git bash.
 
 ```
-git clone https://github.com/your_username_/Project-Name.git
+git clone https://github.com/c6-AsfourMohammad/MERAKI_Academy_Project_4
 ```
 
 2. Install packeges repeat this step in backend and frontend folder
@@ -87,7 +87,7 @@ Ex.
 ## User Story <a name = "#user_story"></a>
 
 Your trello board link
-<a href=''>Trello</a>
+<a href='https://trello.com/b/RnEDyujn/project4'>Trello</a>
 
 ## Data Flow <a name = "#data_flow"></a>
 
@@ -95,4 +95,4 @@ Your trello board link
 
 ## ⚠️ Guided By <a name = "guided_by"></a>
 
-This project is guided by ©️ **[MERAKI Academy](https://www.meraki-academy.org)**
+This project is guided by ©️ **[MOHAMMAD ASFOUR](https://www.meraki-academy.org)**
