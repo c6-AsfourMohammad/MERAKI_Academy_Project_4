@@ -44,9 +44,11 @@ const [isClicked, setIsClicked] = useState(false);
 const[IsLoggedIn,setIsLoggedIn]=useState(true);
 const [Token, setToken] = useState("");
 const [images, setImages] = useState(null);
-
+//creat newArticle
 const newArticle=()=>{
+
     axios.post("http://localhost:5000/articles/",{post:post,poster:poster},
+
     { headers:{'Authorization': 'Bearer '+token}})
     .then((response)=>{
        console.log(response.data);
