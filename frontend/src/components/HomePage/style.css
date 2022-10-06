@@ -1,3 +1,10 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    /* margin-bottom: 10px; */
+    
+  }
 .HomePage{
     display: grid;
     /* margin-top: -3%; */
@@ -6,11 +13,13 @@
     justify-content: center;
      /* background-color: rgb(147, 147, 153); 
     */
+    
 }
 .postPage{
     display: grid;
+  justify-self: center;
     box-shadow: 0 8px 16px 0 #134074, 0 6px 20px 0 #134074;
-   
+   margin-right: 30%;
     /* justify-content: center; */
  /* margin-top: 0%; */
    color: black;
@@ -18,7 +27,7 @@
   width: 200%;
   height: 150%;
    border: 5px solid #134074;
-   
+   margin-top: -20%;
    border-radius: 8px;
    padding: 20%;
    /* margin: 20px; */
@@ -127,6 +136,7 @@ color: aliceblue;
     text-decoration: none;
     overflow: hidden;
     cursor: pointer;
+    
   }
   .like:after {
     content: "";
@@ -139,13 +149,16 @@ color: aliceblue;
     margin-top: -120%;
     opacity: 0;
     transition: all 1s
+    
   }
   .like:active:after {
     padding: 0;
     margin: 0;
     opacity: 1;
     transition: 0s
+    
   }
+  
 /* .like{
     font-size: 120%;
     width: 30%;
@@ -163,38 +176,38 @@ color: aliceblue;
 
 
 } */
-.out{
+/* .out{
     display: grid;
     justify-content: end;
    
-}
-.logOut{
+} */
+/* .logOut{
     
  
  color: rgb(10, 10, 10);
-}
+} */
 .suggestedfriends{
     position: fixed;
     display: grid;
     justify-content: end;
     color: black;
     background-color: #8D98A7;
-  width: 12%;
+  width: 10%;
   height: 70%;
   border: 3px solid #134074;
   border-radius: 8px;
   padding: 1%;
   box-shadow: 0 8px 16px 0 #134074, 0 6px 20px 0 #134074;
-
+  font-family: 'Courier New', Courier, monospace;
   /* margin: 0%; */
 
 }
 .friends{
    
     
-    color: black;
+    /* color: black; */
    /* border:5px solid rgb(6, 6, 98);  */
-    background-color: #8D98A7;
+    /* background-color: #8D98A7; */
     font-size: 170%;
 }
 .friendsMAin{
@@ -209,7 +222,7 @@ color: aliceblue;
   
     border:0px solid #134074; 
   border-radius: 8px;
-  box-shadow: 0 8px 16px 0 #ced0d2, 0 6px 20px 0 #ced0d2;
+  /* box-shadow: 0 8px 16px 0 #ced0d2, 0 6px 20px 0 #ced0d2; */
 
 }
 .friendscountry{
@@ -217,13 +230,133 @@ color: aliceblue;
     /* background-color: #8D98A7; */
 }
 .butFriends{
-    /* background-color: #8D98A7; */
-    border-radius: 8px;
-    height: 100%;
+    position: relative;
+    background-color: #134074;
+    border: none;
+    font-size: 20px;
+    color: #FFFFFF;
+    padding: 20px;
     width: 100%;
+    height: 80%;
+    text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+  box-shadow: 5px 5px 5px #888888;
+  border-radius: 8px;
 
 }
 .butFriends:hover{
-    box-shadow: 0 8px 16px 0 #134074, 0 6px 20px 0 #134074;
-    transition-duration: 0.8s;
+    
+        box-shadow: 3px 3px 5px  #FFFFFF;
+        border-radius: 16px;
+    
 }
+.setting{
+    position: fixed;
+    display: grid;
+    /* justify-content: end; */
+    justify-self: end;
+    color: black;
+    background-color: #8D98A7;
+  width: 8%;
+  height: 30%;
+  border: 3px solid #134074;
+  border-radius: 8px;
+  padding: 1%;
+  box-shadow: 0 8px 16px 0 #134074, 0 6px 20px 0 #134074;
+/* margin-top: 0%; */
+  margin: 0%;
+
+}
+.logOutB{
+    position: relative;
+    background-color: #134074;
+    border: none;
+    font-size: 20px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 100%;
+    height: 80%;
+    text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+  box-shadow: 5px 5px 5px #888888;
+  border-radius: 8px;
+ 
+}
+.logOutB:hover{
+    box-shadow: 3px 3px 5px  #FFFFFF;
+    border-radius: 16px;
+}
+.settingText{
+    font-size: 200%;
+}
+.logOutP{
+    position: relative;
+    background-color: #134074;
+    border: none;
+    font-size: 20px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 100%;
+    height: 80%;
+    text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+  box-shadow: 5px 5px 5px #888888;
+  border-radius: 8px;
+}
+.logOutP:hover{
+    box-shadow: 3px 3px 5px  #FFFFFF;
+    border-radius: 16px;
+}
+.settingText {
+    margin: 0;
+    padding-bottom: 6rem;
+    grid-column: 2;
+    grid-row: 2;
+    z-index: 2;
+    font-family: 'Teko', sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    animation: glow 1s ease-in-out infinite alternate;
+    text-align: center;
+   
+  }
+  .settingText {
+    font-family: 'Teko', sans-serif;
+    color: #4a4a4abe;
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end;
+    justify-self: center;
+    padding-bottom: 1rem;
+  }
+  .friendsMAin {
+    margin: 0;
+    padding-bottom: 6rem;
+    grid-column: 2;
+    grid-row: 2;
+    z-index: 2;
+    font-family: 'Teko', sans-serif;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    animation: glow 1s ease-in-out infinite alternate;
+    text-align: center;
+   
+  }
+  .friendsMAin {
+    font-family: 'Teko', sans-serif;
+    color: #4a4a4abe;
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end;
+    justify-self: center;
+    padding-bottom: 1rem;
+  }

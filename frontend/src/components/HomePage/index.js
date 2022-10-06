@@ -173,7 +173,28 @@ history("/")
   }
   return (
     <div className="HomePage">
-      
+       <div className="setting">
+       <p className="settingText">Setting:</p>
+    <Link  className="li" to='/AddArticale'><button className="logOutP">Profile</button> </Link>
+<button className="logOutP">message</button>
+        <div className="out"> 
+        
+        <Link className="logOut" to="/" onClick={()=>{
+        
+setIsLoggedIn(false)
+setToken("")
+setProfile(null);
+localStorage.clear();
+history("/")
+  }}><button className="logOutB">Log Out</button></Link>
+  </div>
+  <GoogleLogout className="logOutB"
+      clientId="994328639474-ub85dkgodp4vrm5nvfaemiklfko5jpt9.apps.googleusercontent.com"
+      buttonText="Logout Google"
+       onLogoutSuccess={logoutHandler}
+    >
+    </GoogleLogout>
+        </div>
       <input  className="file" type="file" onChange={handleFile}/>
          <Image cloudName="demo" publicId="">
    <Transformation crop="scale" width="200" angle="10" />
@@ -184,26 +205,16 @@ history("/")
             return(<div key={i} className="Friends"> 
            <button className="butFriends"> <p className="friends">{elem.firstName}</p>
                <p className="friendscountry">Country:{elem.country}</p>
-               <p className="friendscountry">Age:{elem.age}</p></button>
+               <p className="friendscountry">Age:{elem.age}</p>
+               </button>
               
 
                </div>)
           })}
 
         </div>
-        <GoogleLogout
-      clientId="994328639474-ub85dkgodp4vrm5nvfaemiklfko5jpt9.apps.googleusercontent.com"
-      buttonText="Logout"
-       onLogoutSuccess={logoutHandler}
-    >
-    </GoogleLogout>
-        <div className="out"> <Link className="logOut" to="/Login" onClick={()=>{
-          history("/Login")
-setIsLoggedIn(false)
-setToken("")
-
-localStorage.clear();
-  }}>Log Out</Link></div>
+      
+      
     
       
       {/* <h1>HomePage</h1> */}
@@ -267,7 +278,7 @@ localStorage.clear();
             </div>
           );
         })}
-        
+       
     
         <div class="footer">
   <p className="footerName">Done by Mohamed Asfour</p>

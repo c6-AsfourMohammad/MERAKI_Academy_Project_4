@@ -16,7 +16,7 @@ text-align: center;
 .links{
  display: flex;
     justify-content: center;
-    gap: 10%;
+    gap: 9%;
     font-size: 200%;
     color: aliceblue;
 }
@@ -75,3 +75,35 @@ text-align: center;
       text-shadow: 0 0 30px #f4f9f9, 0 0 6px #f4f9f9;
     }
   }
+/* .setting{
+  margin-top: 2%;
+  font-family: 'Courier New', Courier, monospace;
+  color: aliceblue;
+  text-decoration: none;
+  background-color:  #134074;
+  border: #134074;
+  font-size: 70%;
+  height: 40%;
+  width: 90%;
+  margin-right: 2%;
+} */
+.search{
+  justify-content: center;
+  font-size: 70%;
+height: 70%;
+border-radius: 8px;
+margin-top: 1%;
+    font-family: 'Courier New', Courier, monospace;
+    /* color: aliceblue; */
+}
+.Mode{
+margin-top: 2%;
+/* margin-right: 0.5%; */
+  background-color: #134074;
+  border: none;
+  color: aliceblue;
+  font-size: 45%;
+  font-family: 'Courier New', Courier, monospace;
+
+    }
+    

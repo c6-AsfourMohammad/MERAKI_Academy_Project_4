@@ -28,8 +28,9 @@ const [isLoggedIn ,setIsLoggedIn ]=useState(false)
        <Routes>
        <Route path="/" element={<Login />} />
        <Route path="/Register" element={<Register/>} />
-       <Route path="/AddArticale" element={<AddArticale/>} />
        <Route path="/HomePage" element={<HomePage/>} />
+       <Route path="/AddArticale" element={<AddArticale/>} />
+      
 
 
     
