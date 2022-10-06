@@ -131,7 +131,8 @@ const updateUser = (req, res)=>{
           age:user.age,
           country:user.country,
           bio:user.bio,
-          imgProfile:user.imgProfile,});
+          imgProfile:user.imgProfile,
+        });
         } else {
           res.status(200).json({ success: false,message:  'user', });
         }

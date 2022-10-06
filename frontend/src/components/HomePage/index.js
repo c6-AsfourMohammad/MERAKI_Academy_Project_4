@@ -203,12 +203,12 @@ history("/")
       <p className="friendsMAin">suggested friends:</p>
           {user.map((elem,i)=>{
             return(<div key={i} className="Friends"> 
-           
-           <button className="butFriends"> <p className="friends">{elem.firstName}</p>
+           <Link  to='/AddArticale'><button className="butFriends"> <p className="friends">{elem.firstName}</p>
            <img className="imgSugg" src={elem.imgProfile}/>
                <p className="friendscountry">Country:{elem.country}</p>
                <p className="friendscountry">Age:{elem.age}</p>
-               </button>
+               </button></Link>
+           
               
 
                </div>)

@@ -44,10 +44,12 @@ const [isClicked, setIsClicked] = useState(false);
 const[IsLoggedIn,setIsLoggedIn]=useState(true);
 const [Token, setToken] = useState("");
 const [images, setImages] = useState(null);
+const [imgPost, setimgPost] = useState("");
+
 //creat newArticle
 const newArticle=()=>{
 
-    axios.post("http://localhost:5000/articles/",{post:post,poster:poster},
+    axios.post("http://localhost:5000/articles/",{post:post,poster:poster,imgPost:imgPost},
 
     { headers:{'Authorization': 'Bearer '+token}})
     .then((response)=>{
@@ -165,32 +167,34 @@ const getUser = () => {
   return( 
     
   <div className="Article">
-    <div className="imgUpl">
-    <Image cloudName="imgProfile" publicId={images} src={images}>
-   <Transformation crop="scale" width="200" angle="10" />
- </Image>
-<input  className="file" type="file" onChange={handleFile}/>
- {/* <img className="imgProfile" src={images}/>  */}
-
-  {/* {images.map((elem, index) => (
-        <img key={index} src={elem.file.name} />
-       
-      ))} */}
-       
-</div>
+    
     
      {user&&user.map((elem,i)=>{
     //return map function 
         return( 
         <div key={i} className="profile">
-            <p className="firstName">{elem.firstName}</p>
-            
-            {/* <p className="lastName">{elem.lastName} </p> */}
-            <p className="bio"><br/>Bio: {elem.bio}</p>
-            <p className="country"><br/>Country:{elem.country}</p>
-            <p className="Age"><br/>Age:{elem.age}</p>
-            {/* <p className="imgProfile">{elem.imgProfile}</p> */}
+          <div className="Hi">
+          {/* <div className="imgUpl">
+    <Image  className="imgProfile" cloudName="imgProfile" publicId={images} src={images}>
+   <Transformation crop="scale" width="200" angle="10" />
+ </Image>
+<input  className="file" type="file" onChange={handleFile}/>
 
+</div> */}
+            <img className="imgA" src={elem.imgProfile}/>
+            <p className="firstNameA">{elem.firstName}</p>
+           
+            </div>
+          
+            {/* <p className="lastName">{elem.lastName} </p> */}
+            <div className="data">
+            <p className="bio">Bio: {elem.bio}</p>
+            <p className="country">Country:{elem.country}</p>
+            <p className="Age">Age:{elem.age}</p>
+           
+            </div>
+            {/* <p className="imgProfile">{elem.imgProfile}</p> */}
+<div className="border"> </div>
             {/* <img className="img" src={`${elem.files}`}/> */}
             
 
@@ -198,14 +202,17 @@ const getUser = () => {
 
         
     })}
-     <input className="post" type="text" 
-     placeholder="post" onChange={(e)=>{setPost(e.target.value)}}/>
+    <div className="postA" >
+      
+     <input className="postAR" type="text" 
+     placeholder="what are you thinking about?" onChange={(e)=>{setPost(e.target.value)}}/>
      
-      <button className="articalButton" onClick={newArticle}>Create New Post</button>
+      <button className="articalButton" onClick={newArticle}> Post</button>
+      </div>
   {articles &&
         articles.map((elem, i) => {
           return (
-            <div key={i} className="postPage">
+            <div key={i} className="postPageA">
                
               <p className="post">{elem.post}</p>
               <input  className="file" type="file" onChange={handleFile}/>

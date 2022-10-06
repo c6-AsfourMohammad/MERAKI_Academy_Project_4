@@ -18,7 +18,7 @@
 .postPage{
     display: grid;
   justify-self: center;
-    box-shadow: 0 8px 16px 0 #134074, 0 6px 20px 0 #134074;
+    box-shadow: 0 8px 8px 0 #134074, 0 6px 18px 0 #134074;
    /* margin-right: 30%; */
     /* justify-content: center; */
  /* margin-top: 0%; */
