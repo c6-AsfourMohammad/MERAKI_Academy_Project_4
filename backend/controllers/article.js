@@ -108,10 +108,37 @@ const getArticlesByPoster = (req, res) => {
 // console.log(regex);
 
 // };
+const getarticlesById = (req, res) => {
+  let _id = req.token.id;
+  articlesModel.findById(_id)
+    .populate("post", "firstName -_id")
+    .exec()
+    .then((result) => {
+      if (!result) {
+        return res.status(404).json({
+          success: false,
+          message: `The article is not found`,
+        });
+      }
+      res.status(200).json({
+        success: true,
+        message: `The article ${_id} `,
+        article: result,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server Error`,
+        err: err.message,
+      });
+    });
+};
 module.exports={
   createNewArticle,
   updateArticle,
   deleteArticle,
   getAllArticles,
   getArticlesByPoster,
-  getArticles};
+  getArticles,
+  getarticlesById};

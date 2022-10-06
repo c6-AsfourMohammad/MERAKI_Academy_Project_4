@@ -223,8 +223,13 @@ history("/")
       {articles &&
         articles.map((elem, i) => {
           return (
+          
             <div key={i} className="postPage">
-              
+              <div>
+                {user&&user.map((elem,i)=>{
+                    <p className="post">{elem.age}</p>
+                })} </div>
+               <p className="post">{elem.poster.firstName}</p>
               <p className="post">{elem.post}</p>
               <img className="imgPost" src={elem.imgPost}/>
               <p className="post">{elem.comment}</p>
@@ -249,35 +254,36 @@ history("/")
             })
         }}>Delete</button> */}
 
-                {/* <div className="UpdateMain">
-                <input className="postInput"onChange={(e) => {
-                  setNewpost(e.target.value);
+                 <div className="commentMain">
+                <input className="commentInput"onChange={(e) => {
+                  setnewComment(e.target.value);
                 }}
-                type="post"
-                placeholder="post"
+                type="comment"
+                placeholder="comment"
               />
-        <button className="UpdateButton" id={elem._id} onClick={(e)=>{
+        <button className="CommentButton" id={elem._id} onClick={(e)=>{
            
-            axios.put(`http://localhost:5000/articles/${e.target.id}`,{post:Newpost})
+            axios.post(`http://localhost:5000/articles/comments/`,{comment:comment,commenter:commenter},
+    { headers:{'Authorization': 'Bearer '+token}})
             .then((response)=>{
                 
                 console.log(response);
-                console.log("Update Done");
+                console.log("comment Done");
             }).catch((err)=>{
                 console.log(err);
             });
-        }}>Update</button>
-         </div> */}
+        }}>Add</button>
+         </div>
               
-              <p className="comments">{elem.comment}</p>
+              <p className="comment">{elem.comment}</p>
               {/* <p className="comments">{elem.user}</p> */}
 
               
-              <div className="commentMain">
+              {/* <div className="commentMain">
               <input className="commentInput" type="text" 
      placeholder="comment" onChange={(e)=>{setComment(e.target.value)}}/>
-      <button className="CommentButton" onClick={NewComment}>Add Comment</button>
-      </div>
+      <button className="CommentButton" onClick={NewComment}>Add</button>
+      </div> */}
               </div>
             </div>
           );

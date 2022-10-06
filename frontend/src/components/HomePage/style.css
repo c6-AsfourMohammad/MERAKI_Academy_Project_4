@@ -19,17 +19,17 @@
     display: grid;
   justify-self: center;
     box-shadow: 0 8px 16px 0 #134074, 0 6px 20px 0 #134074;
-   margin-right: 30%;
+   /* margin-right: 30%; */
     /* justify-content: center; */
  /* margin-top: 0%; */
    color: black;
-   background-color: #8D98A7;
+   background-color: #cdcdce;
   width: 150%;
-  height: 110%;
+  height: 168%;
    border: 5px solid #134074;
-   margin-top: -20%;
+   margin-top: -19%; 
    border-radius: 8px;
-   padding: 20%;
+   /* padding: 0%; */
    /* margin: 20px; */
     /* background-color: rgb(6, 6, 98); */
 }
@@ -37,15 +37,24 @@
     box-shadow: 0 10px 20px 0 #134074, 0 10px 30px 0 #134074;
 
 }
-.buttonHome{
-  
-  
-  display: flex;
-  
+.post{
+  /* margin-top: 3%; */
+  background-color: #f4f5f5;
+  box-shadow: 0 5px 5px 0 #134074;
   gap: 10%;
 }
-.imgPost{
+.buttonHome{
   
+ 
+  display: flex;
+  
+  gap: 15%;
+}
+.imgPost{
+  display: flex;
+  justify-self: center;
+  
+  margin-top: 10%;
   border-radius: 4px;
   /* height: 70%; */
 }
@@ -58,8 +67,9 @@
 }
 .commentInput{
   border-radius: 8px;
-  height: 60%;
+  height: 77%;
   width: 90%;
+  
 }
 .comments{
     display:grid;
@@ -73,7 +83,7 @@
     background-color: #134074;
     border: none;
     font-size: 90%;
-    height: 60%;
+    height: 75%;
     
     color: #FFFFFF;
     padding: 20px;
@@ -151,8 +161,8 @@ color: aliceblue;
     font-size: 100%;
     color: #FFFFFF;
     padding: 20px;
-    width: 30%;
-    height: 60%;
+    width: 13%;
+    height: 75%;
     text-align: center;
     transition-duration: 0.4s;
     text-decoration: none;

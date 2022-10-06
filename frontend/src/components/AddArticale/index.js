@@ -187,7 +187,7 @@ const getUser = () => {
             <p className="bio"><br/>Bio: {elem.bio}</p>
             <p className="country"><br/>Country:{elem.country}</p>
             <p className="Age"><br/>Age:{elem.age}</p>
-            <p className="Age"><br/>{elem.imgProfile}</p>
+            {/* <p className="imgProfile">{elem.imgProfile}</p> */}
 
             {/* <img className="img" src={`${elem.files}`}/> */}
             
@@ -246,7 +246,7 @@ const getUser = () => {
               <div className="commentMain">
               <input className="commentInput" type="text" 
      placeholder="comment" onChange={(e)=>{setComment(e.target.value)}}/>
-      <button className="CommentButton" onClick={NewComment}>Add Comment</button>
+      <button className="CommentButton" onClick={NewComment}>Add</button>
       
               {/* <input className="commentInput"onChange={(e) => {
                   setComment(e.target.value);

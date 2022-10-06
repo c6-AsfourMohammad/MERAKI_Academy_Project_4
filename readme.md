@@ -1,15 +1,15 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://www.meraki-academy.org/assets/img/logov02.svg" alt="Project logo"></a>
+ <img width=200px height=200px src="https://about.twitter.com/content/dam/about-twitter/en/brand-toolkit/brand-download-img-1.jpg.twimg.1920.jpg" alt="Project logo"></a>
 </p>
 
-<h3 align="center">MERAKI</h3>
+<h3 align="center">Twitter</h3>
 
 ---
 
 <p align="center"> An awesome Project to descripe README 
     <br> 
-<a href=''>Demo</a>
+<a href='http://localhost:3000/'>Demo</a>
     <br> 
 </p>
 
@@ -27,7 +27,7 @@
 
 Write about 1-2 paragraphs describing the purpose of your project.
 
-Ex. Are you looking for a quick and easy way to action, action, and action? The **(name of application)** is the greatest and most accurate application to do this for you. It helps you to **(list of activities)**. The **(name of application)** provides a simple design to ensure having the best user experience.
+Ex. Are you looking for a quick and easy way to action, action, and action? The **(Twitter)** is the greatest and most accurate application to do this for you. It helps you to **(list of activities)**. The **(Twitter)** provides a simple design to ensure having the best user experience.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
