@@ -13,7 +13,7 @@
     justify-content: center;
      /* background-color: rgb(147, 147, 153); 
     */
-    
+    gap: 10%;
 }
 .postPage{
     display: grid;
@@ -132,6 +132,8 @@ color: rgb(4, 4, 4);
 color: aliceblue;
 border: none;
     font-size: 150%;
+    width: 25%;
+    height: 75%;
 }
 .DeletePost :hover{
     font-family: 'Courier New', Courier, monospace;
@@ -161,7 +163,7 @@ color: aliceblue;
     font-size: 100%;
     color: #FFFFFF;
     padding: 20px;
-    width: 13%;
+    width: 25%;
     height: 75%;
     text-align: center;
     transition-duration: 0.4s;
@@ -190,7 +192,86 @@ color: aliceblue;
     transition: 0s
     
   }
-  
+  .DeletePost {
+    position: relative;
+    background-color: #134074;
+    border: none;
+    font-size: 100%;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 25%;
+    height: 75%;
+    text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  .DeletePost:after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 1s
+    
+  }
+  .DeletePost:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+    
+  }
+  .UpdateButton {
+    position: relative;
+    background-color: #134074;
+    border: none;
+    font-size: 100%;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 75%;
+    height: 75%;
+    text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  .UpdateButton:after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 1s
+    
+  }
+  .UpdateButton:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+    
+  }
+  .UpdateMain{
+    display: flex;
+  }
+  .postInput{
+    border-radius: 8px;
+    height: 77%;
+    width: 90%;
+  }
 /* .like{
     font-size: 120%;
     width: 30%;
@@ -398,3 +479,15 @@ color: aliceblue;
     height: 40%;
     border-radius: 50%;
   }
+  .footerH {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5%;
+    background-color: #134074;
+    color: white;
+    font-size: 100%;
+    text-align: center;
+    
+}

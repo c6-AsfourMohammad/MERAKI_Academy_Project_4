@@ -182,7 +182,7 @@ const getUser = () => {
 
 </div> */}
             <img className="imgA" src={elem.imgProfile}/>
-            <p className="firstName">{elem.firstName}</p>
+            <p className="firstNameA">{elem.firstName}</p>
            
             </div>
           
@@ -218,7 +218,7 @@ const getUser = () => {
               <input  className="file" type="file" onChange={handleFile}/>
 <img className="imgProfile" src={images}/>
               <div className="buttonHome">
-              <button className="like" onClick={ handleClick }>
+              <button className="likeA" onClick={ handleClick }>
       <span >{ `Like | ${likes}` }</span>
       <p>{elem.like}</p>
     </button>
@@ -231,7 +231,7 @@ const getUser = () => {
         }}>Delete</button>
 
                 <div className="UpdateMain">
-                <input className="postInput"onChange={(e) => {
+                <textarea className="postInput"onChange={(e) => {
                   setNewpost(e.target.value);
                 }}
                 type="post"
@@ -285,7 +285,7 @@ const getUser = () => {
     
 
 
-      <div class="footer">
+      <div class="footerA">
   <p className="footerName">Done by Mohamed Asfour</p>
 </div>
       </div>

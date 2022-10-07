@@ -290,7 +290,7 @@ history("/")
         })}
        
     
-        <div class="footer">
+        <div class="footerH">
   <p className="footerName">Done by Mohamed Asfour</p>
 </div>
     </div>
