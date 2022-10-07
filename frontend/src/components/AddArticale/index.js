@@ -182,7 +182,7 @@ const getUser = () => {
 
 </div> */}
             <img className="imgA" src={elem.imgProfile}/>
-            <p className="firstNameA">{elem.firstName}</p>
+            <p className="firstName">{elem.firstName}</p>
            
             </div>
           
@@ -205,7 +205,7 @@ const getUser = () => {
     <div className="postA" >
       
      <input className="postAR" type="text" 
-     placeholder="what are you thinking about?" onChange={(e)=>{setPost(e.target.value)}}/>
+     placeholder="what are you thinking about" onChange={(e)=>{setPost(e.target.value)}}/>
      
       <button className="articalButton" onClick={newArticle}> Post</button>
       </div>

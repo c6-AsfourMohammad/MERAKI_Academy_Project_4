@@ -112,6 +112,7 @@ text-shadow:5px 5px 5px #a8a7a7;
     color:aliceblue;
 
 }
+
 .articalButton{
     font-family: 'Courier New', Courier, monospace;
     font-size: 100%;
@@ -125,6 +126,7 @@ text-shadow:5px 5px 5px #a8a7a7;
     font-size: 110%;
     transition: 0.4s;
 }
+
 .postPageA{
     display: grid;
     justify-content: center;
