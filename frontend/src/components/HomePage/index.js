@@ -16,7 +16,7 @@ const HomePage = () => {
   const [articles, setArticles] = useState([]);
   const [post, setPost] = useState("");
   const [poster, setPoster] = useState("");
-   const [comment, setComment] = useState("");
+   const [comment, setComment] = useState([]);
    const [commenter, setCommenter] = useState("");
   const [updateInput, setUpdateInput] = useState(false);
   // const [message, setMessage] = useState("");
@@ -174,6 +174,7 @@ history("/")
     // console.log(GoogleLogout);
   
   }
+  console.log(comment);
   return (
     <div className="HomePage">
        <div className="setting">
@@ -228,7 +229,11 @@ history("/")
           return (
           
             <div key={i} className="postPage">
-              
+            <div>{comment&&comment.map((elem1,i1)=>{
+              return(
+                <p className="postAr">{elem1.comment}</p>
+              )
+            })}</div>
               <div className="vbn">
                  <p className="postHp">{elem.poster}</p>
 
