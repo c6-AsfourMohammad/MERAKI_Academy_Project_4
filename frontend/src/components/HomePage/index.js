@@ -101,6 +101,7 @@ const getAllArticle = () => {
   useEffect(() => {
     getAllArticle();
   }, []);
+  console.log(articles);
 //   const createNewComment =  (id) => {
 //     try {
 //        axios.post(`http://localhost:5000/articles/${id}/comments`,{comment:comment},
@@ -130,6 +131,8 @@ const getAllArticle = () => {
     { headers:{'Authorization': 'Bearer '+token}})
     .then((response)=>{
        console.log(response.data);
+       setComment([...response.data]);
+
       //  setMessage("The article has been created successfully");
        console.log("The article has been created successfully");
       

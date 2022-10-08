@@ -25,9 +25,9 @@
 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
 
-Ex. Are you looking for a quick and easy way to action, action, and action? The **(Twitter)** is the greatest and most accurate application to do this for you. It helps you to **(list of activities)**. The **(Twitter)** provides a simple design to ensure having the best user experience.
+
+ Are you looking for a quick and easy way to communicate, communicate, and communicate? The **(Twitter)** is the greatest and most accurate application to do this for you. It helps you to **(communicate )**. The **(Twitter)** provides a simple design to ensure having the best user experience.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
@@ -70,12 +70,12 @@ Now app ready to use
 
 ## 🎈 Usage <a name="usage"></a>
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-Ex.
+
+
 - You don't have to register to navigate our web app
 - You can click on the **Home** tab provided in the navigation bar to view the home section
-- You can click on the **Add to cart** button to add this product to your cart but you have to be one of our users, so you should create an account 
+
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
