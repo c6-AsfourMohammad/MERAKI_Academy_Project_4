@@ -238,9 +238,12 @@ history("/")
                  <p className="postHp">{elem.poster}</p>
 
               <p className="postAr">{elem.post}</p></div>
+             
                {/* <p className="post">{elem.comment}</p> */}
               <img className="imgPost" src={elem.imgPost}/>
-             
+              <p className="ccc">comment:
+              {/* <p className="c">ahmad:<p>hiii</p></p> */}
+              </p>
              
               
               {/* <p className="post">{elem.commenter}</p> */}

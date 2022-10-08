@@ -64,7 +64,7 @@ const newArticle=()=>{
   };
   const getArticle = () => {
     console.log("token : " + token);
-    axios.get("http://localhost:5000/articles/", {
+    axios.get("http://localhost:5000/articles/All", {
         headers: { Authorization: "Bearer " + token },
       })
       .then((response) => {
@@ -213,7 +213,7 @@ const getUser = () => {
         articles.map((elem, i) => {
           return (
             <div key={i} className="postPageA">
-                 {/* <p className="post">{elem.comment}</p> */}
+               
               <div className="vbnA">
                  <p className="postArt">{elem.poster}</p>
               <p className="postA">{elem.post}</p><br/></div>
