@@ -213,7 +213,7 @@ const getUser = () => {
         articles.map((elem, i) => {
           return (
             <div key={i} className="postPageA">
-               
+                 {/* <p className="post">{elem.comment}</p> */}
               <div className="vbnA">
                  <p className="postArt">{elem.poster}</p>
               <p className="postA">{elem.post}</p><br/></div>

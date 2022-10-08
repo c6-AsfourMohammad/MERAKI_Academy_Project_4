@@ -225,12 +225,14 @@ history("/")
           return (
           
             <div key={i} className="postPage">
+              
               <div className="vbn">
                  <p className="postHp">{elem.poster}</p>
-              <p className="postAr">{elem.post}</p><br/></div>
-              
+
+              <p className="postAr">{elem.post}</p></div>
+               {/* <p className="post">{elem.comment}</p> */}
               <img className="imgPost" src={elem.imgPost}/>
-              <p className="post">{elem.comment}</p>
+             
              
               
               {/* <p className="post">{elem.commenter}</p> */}
@@ -253,7 +255,7 @@ history("/")
         }}>Delete</button> */}
 
                  <div className="commentMain">
-                 <p className="post">{elem.Comment}</p>
+                 <p className="commentInput">{elem.Comment}</p>
                 <input className="commentInput"onChange={(e) => {
                   setnewComment(e.target.value);
                 }}
