@@ -5,7 +5,7 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import AddArticale from "./components/AddArticale";
 import HomePage from "./components/HomePage";
-
+import Search from "./components/Search";
 
 
 //import axios from 'axios';
@@ -30,7 +30,9 @@ const [isLoggedIn ,setIsLoggedIn ]=useState(false)
        <Route path="/Register" element={<Register/>} />
        <Route path="/HomePage" element={<HomePage/>} />
        <Route path="/AddArticale" element={<AddArticale/>} />
-      
+       <Route path="/Search" element={<Search/>} />
+   
+
 
 
     

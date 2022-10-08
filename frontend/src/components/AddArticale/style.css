@@ -1,10 +1,31 @@
 .Article{
     display: grid;
     /* justify-content: center; */
-    margin-top: 5%;
-    gap: 9%;
+    /* margin-top: 5%; */
+    gap: 6%;
    
 }
+.postP{
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+}
+.vbnA{
+    /* background-color: #f4f5f5; */
+    /* box-shadow: 0 5px 5px 0 #134074; */
+    /* width: 150%; */
+  }
+  .postArt{
+    display: flex;
+    /* background-color: #f4f5f5; */
+    margin-left: -20%;
+    font-family: 'Times New Roman', Times, serif;
+      font-size: 1.5vw;
+      border-bottom: 0px solid #8D98A7;
+   
+  
+  }
+  
 .post{
     font-family: 'Courier New', Courier, monospace;
     font-size: 160%;
@@ -12,9 +33,16 @@
    
 }
 .postA{
-    display: flex;
-    justify-content: center;
-    margin-top: 5%;
+    font-size: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5vw;
+    
+    /* border: 1px solid #8D98A7; */
+    /* border-top:1px solid #8D98A7; */
+    /* border-bottom: 0px solid #8D98A7; */
+color: rgb(4, 4, 4);
+  /* border-radius: 50px 50px; */
+ 
   
 }
 .postAR{
@@ -27,8 +55,10 @@ border-radius: 4px;
 }
 .Hi{
 display: flex;
-
+justify-content: end;
 margin-left: 20%;
+margin-top: 3.5%;
+
 }
 .articalButton{
     font-family: 'Courier New', Courier, monospace;
@@ -42,21 +72,23 @@ margin-left: 20%;
    justify-content: center;
 gap: 20%;
     font-size: 400%;
-    /* background-color: rgb(6, 6, 98); */
+    background-color: #134074;
 color: #134074;
 /* gap: 10%; */
 margin-top: 4%;
+height: 140%;
+border-radius: 5%;
 }
 .imgA{
-    height: 150%;
-    width: 150%;
+    height: 70%;
+    width: 100%;
     border-radius: 50%;
 box-shadow:5px 5px 5px  #134074;
 
 }
 .imgA:hover{
-    height: 150%;
-    width: 150%;
+    height: 71%;
+    width: 101%;
     border-radius: 50%;
 box-shadow:8px 8px 8px  #134074;
 
@@ -68,7 +100,8 @@ width:  150%; */
 font-size: 70%;
 font-family:  'Arial Narrow Bold' ;
 font-style:oblique;
-text-shadow:5px 5px 5px #a8a7a7;
+text-shadow:5px 5px 5px #090909;
+
 }
 /* .imgProfile{
     display: flex;
@@ -81,11 +114,11 @@ box-shadow: 5px 5px 10px  #134074;
 .data{
     display: grid;
     justify-items: center;
-   height: 150%;
-   /* margin-top: 2%; */
-   background-color: #134074;
-   color: aliceblue;
-border-radius: 20%;
+   /* height: 150%; */
+   /* margin-top: 0%; */
+   /* background-color: #134074; */
+   color: #a8a7a7;
+/* border-radius: 20%; */
 
 
    /* margin-right: 10%; */
@@ -101,12 +134,12 @@ border-radius: 20%;
 .bio{
    
     display: flex;
-    font-size: 60%;
+    font-size: 50%;
    font-family:  'Arial Narrow Bold' ;
    font-style:oblique;
 margin-top: 20%;
-/* width:  150%; */
-text-shadow:5px 5px 5px #a8a7a7;
+width:  200%;
+text-shadow:5px 5px 5px #090909;
 }
 .country{
      
@@ -114,7 +147,7 @@ text-shadow:5px 5px 5px #a8a7a7;
     font-size: 70%;
    font-family:  'Arial Narrow Bold' ;
    font-style:oblique;
-text-shadow:5px 5px 5px #a8a7a7;
+text-shadow:5px 5px 5px #090909;
 }
 .file{
     display: flex;
@@ -151,13 +184,13 @@ text-shadow:5px 5px 5px #a8a7a7;
 .firstNameA{
     font-size: calc( 1em + 3vmin );
     /* font-weight: 900; */
-    color: #134074;
-    
+    color: #cdcdce;
+    height: 40%;
     --x-offset: -0.0625em;
     --y-offset: 0.0625em;
     --stroke: 0.025em;
-    --background-color: white;
-    --stroke-color: #a4bdd9;
+    --background-color: rgb(0, 0, 0);
+    --stroke-color: #cdcdce;
     
     text-shadow: 
       
@@ -180,7 +213,7 @@ text-shadow:5px 5px 5px #a8a7a7;
     font-size: 100%;
     color: #FFFFFF;
     padding: 20px;
-    width: 25%;
+    width: 30%;
     height: 70%;
     text-align: center;
     transition-duration: 0.4s;

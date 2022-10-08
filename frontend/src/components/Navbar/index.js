@@ -1,11 +1,22 @@
 import React from "react";
 import "./style.css";
+import axios, { Axios } from "axios";
+
 import {Link, useNavigate }from 'react-router-dom'
-import  { useState } from 'react';
+
 import { FaBeer } from 'react-icons/fa';
+import { useState, useContext, useEffect } from "react";
+
 const Navigate=()=>{
-const Navigate=useNavigate();
+const history=useNavigate();
 const [theme, setTheme] = useState('light');
+const[firstName,setfirstName]=useState("")
+// const { token, isLoggedIn } = useContext(newContext);
+  const [message, setMessage] = useState("");
+
+
+
+
 const toggleTheme = () => {
     if (theme === 'light') {
       setTheme('dark');
@@ -23,15 +34,14 @@ return(
     <Link  className="li" to='/Register'>Register</Link>
   
     <div className="search">
-        <input  className="search"type="text" placeholder="search" onClick={(e)=>{
-
-        }}/></div>
+        <input  className="search"type="text" placeholder="search"onClick={(e)=>{setfirstName(e.target.value)}} />
+       </div>
           <Link  className="li" to='/homePage'>homePage</Link>
     <Link  className="li" to='/AddArticale'>Profile</Link>
     <button className="Mode" onClick={(e)=>{
         <div className={`App ${theme}`}>
       <button onClick={toggleTheme}>Toggle Theme</button>
-      <h1>Hello, world!</h1>
+     
     </div>
     }}>Mode</button>
    

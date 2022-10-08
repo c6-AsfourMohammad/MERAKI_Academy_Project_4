@@ -91,7 +91,58 @@ user.save().then((result)=>{
 //       bio:result.bio,
 //       //Permissions:["write","read","delete"]
 //     };
+// const getuserByfirstName = (req, res) => {
+//   let firstName = req.params.firstName;
+//  usersModel
+//     .find({firstName})
+//     .exec()
+//     .then((result) => {
+//       if (!result) {
+//         return res.status(404).json({
+//           success: false,
+//           message: `The firstName is not found`,
+//         });
+//       }
+//       res.status(200).json({
+//         success: true,
+//         message: `The firstName ${firstName} `,
+//         firstName: result,
+//       });
+//     })
+//     .catch((err) => {
+//       res.status(500).json({
+//         success: false,
+//         message: `Server Error`,
+//         err: err.message,
+//       });
+//     });
+// };
+const getuserByfirstName = (req, res) => {
+  let firstName = req.params.firstName;
 
+  usersModel
+    .find({ firstName: firstName })
+    .then((user) => {
+      if (!user.length) {
+        return res.status(404).json({
+          success: false,
+          message: `The firstName: ${firstName} has no firstName`,
+        });
+      }
+      res.status(200).json({
+        success: true,
+        message: `All the articles for the firstName: ${firstName}`,
+        user: user,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server Error`,
+        err: err.message,
+      });
+    });
+};
 //     const options = {
 //       expiresIn: "60m",
 //     };
@@ -169,4 +220,4 @@ const updateUser = (req, res)=>{
       });
   };
   
-module.exports={register,updateUser,getAllUser,getUserById};
+module.exports={register,updateUser,getAllUser,getUserById,getuserByfirstName};

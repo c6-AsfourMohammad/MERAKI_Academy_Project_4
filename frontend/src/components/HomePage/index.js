@@ -16,7 +16,7 @@ const HomePage = () => {
   const [articles, setArticles] = useState([]);
   const [post, setPost] = useState("");
   const [poster, setPoster] = useState("");
-   const [comment, setComment] = useState([]);
+   const [comment, setComment] = useState("");
    const [commenter, setCommenter] = useState("");
   const [updateInput, setUpdateInput] = useState(false);
   // const [message, setMessage] = useState("");
@@ -47,7 +47,7 @@ const getAllArticle = () => {
     })
     .then((response) => {
       console.log(response.data.articles);
-      setArticles([...response.data.articles]);
+      setArticles([...response.data.articles].reverse());
       console.log(articles);
     })
     .catch((err) => {
@@ -225,12 +225,10 @@ history("/")
           return (
           
             <div key={i} className="postPage">
-              <div>
-                {user&&user.map((elem,i)=>{
-                    <p className="post">{elem.age}</p>
-                })} </div>
-               <p className="post">{elem.poster.firstName}</p>
-              <p className="post">{elem.post}</p>
+              <div className="vbn">
+                 <p className="postHp">{elem.poster}</p>
+              <p className="postAr">{elem.post}</p><br/></div>
+              
               <img className="imgPost" src={elem.imgPost}/>
               <p className="post">{elem.comment}</p>
              
@@ -255,6 +253,7 @@ history("/")
         }}>Delete</button> */}
 
                  <div className="commentMain">
+                 <p className="post">{elem.Comment}</p>
                 <input className="commentInput"onChange={(e) => {
                   setnewComment(e.target.value);
                 }}
@@ -275,7 +274,7 @@ history("/")
         }}>Add</button>
          </div>
               
-              <p className="comment">{elem.comment}</p>
+              {/* <p className="comment">{elem.comment}</p> */}
               {/* <p className="comments">{elem.user}</p> */}
 
               

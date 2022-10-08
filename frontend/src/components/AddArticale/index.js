@@ -69,7 +69,7 @@ const newArticle=()=>{
       })
       .then((response) => {
         console.log(response.data.articles);
-        setArticles([...response.data.articles]);
+        setArticles([...response.data.articles].reverse());
         console.log(articles);
       })
       .catch((err) => {
@@ -202,10 +202,10 @@ const getUser = () => {
 
         
     })}
-    <div className="postA" >
+    <div className="postP" >
       
      <input className="postAR" type="text" 
-     placeholder="what are you thinking about" onChange={(e)=>{setPost(e.target.value)}}/>
+     placeholder="what are you thinking about?" onChange={(e)=>{setPost(e.target.value)}}/>
      
       <button className="articalButton" onClick={newArticle}> Post</button>
       </div>
@@ -214,7 +214,9 @@ const getUser = () => {
           return (
             <div key={i} className="postPageA">
                
-              <p className="post">{elem.post}</p>
+              <div className="vbnA">
+                 <p className="postArt">{elem.poster}</p>
+              <p className="postA">{elem.post}</p><br/></div>
               <input  className="file" type="file" onChange={handleFile}/>
 <img className="imgProfile" src={images}/>
               <div className="buttonHome">
